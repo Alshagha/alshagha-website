@@ -25,10 +25,9 @@ const Tree = () => {
 
                     <div className="tree-image-wrapper">
                         <img
-                            src="/images/family_tree.jpg"
+                            src="/images/family_tree.png"
                             alt="شجرة عائلة الشقحاء"
                             className="tree-image"
-                            loading="lazy"
                         />
                     </div>
 
