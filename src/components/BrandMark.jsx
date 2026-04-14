@@ -7,7 +7,7 @@ const BrandMark = () => {
             <div className="container">
                 <h2 className="section-title text-center">وسم الأسرة</h2>
                 <div className="brand-mark-svg-container fade-in-up">
-                    <img src="/images/brand_mark.png" alt="وسم آل حمود الهذلي" className="brand-svg" />
+                    <img src="/images/brand_mark.png" alt="وسم آل حمود الهذلي" className="brand-svg" loading="lazy" />
                 </div>
             </div>
         </section>

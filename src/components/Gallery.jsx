@@ -3,9 +3,9 @@ import './Gallery.css';
 
 const Gallery = () => {
     const images = [
-        { src: '/images/testament_1.png', alt: 'وصية 1' },
-        { src: '/images/testament_2.png', alt: 'وصية 2' },
-        { src: '/images/testament_3.png', alt: 'وصية 3' }
+        { src: '/images/testament_1.jpg', alt: 'وصية 1' },
+        { src: '/images/testament_2.jpg', alt: 'وصية 2' },
+        { src: '/images/testament_3.jpg', alt: 'وصية 3' }
     ];
 
     const [selectedImage, setSelectedImage] = useState(null);

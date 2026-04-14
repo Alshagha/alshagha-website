@@ -15,9 +15,9 @@ const Figures = () => {
             highlights: "اشتهر الشيخ محمد بالتجاره. ويوجد حاليا اوقاف واملاك له بعنيزة تعرف بـ قيصرية الشقحاء يقف عليها ناظر من آحفاده، وتوجد له وصية تعد من اهم وثاىق الأسرة بتاريخ ١٢٦١ آوصى رحمه الله بعدة وآوجه خير ومازالت ولله الحمد تطبق على أكمل وجه. توفي رحمه الله بعنيزه عام ١٢٩٣ عن عمر يناهز ٦٣ سنه رحمه الله رحمة واسعه.",
             icon: <GiCrown />,
             testaments: [
-                '/images/testament_1.png',
-                '/images/testament_2.png',
-                '/images/testament_3.png'
+                '/images/testament_1.jpg',
+                '/images/testament_2.jpg',
+                '/images/testament_3.jpg'
             ]
         },
         {
