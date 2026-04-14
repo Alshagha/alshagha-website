@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Alshagha Family Color Palette - Light Theme */
+  --color-primary: #aa8621;
+  --color-primary-dark: #8c6a17;
+  --color-secondary: #0a2540;
+
+  --color-bg: #fcfbf9;
+  /* Off-white / Cream background */
+  --color-surface: #ffffff;
+
+  --color-text: #2c2217;
+  /* Dark brown text for contrast and elegance */
+  --color-text-muted: #5e5246;
+
+  /* Prioritize LYON font, use Cairo as fallback */
+  --font-base: 'LYON', 'Lyon Arabic', 'Lyon', 'Cairo', Tahoma, Arial, sans-serif;
+  --font-heading: 'LYON', 'Lyon Arabic', 'Lyon', 'Cairo', Tahoma, Arial, sans-serif;
+
+  --transition: all 0.3s ease-in-out;
+  --blur: blur(10px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  direction: rtl;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 7rem 0;
+  /* Increased for better isolation */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-text {
+  color: var(--color-primary);
+}
+
+/* Base Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: var(--transition);
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(170, 134, 33, 0.2);
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+    /* Alleviate crampness */
+  }
+
+  .section-title {
+    font-size: 2rem;
+    /* Better scale on phones */
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,86 @@
+import React from 'react';
+import './Council.css';
+
+const Council = () => {
+    return (
+        <section className="council section-padding" id="council">
+            <div className="container">
+                <h2 className="section-title text-center">مجلس أسرة الشقحاء</h2>
+                <p className="section-subtitle text-center">
+                    تم تشكيل مجلس الأسرة لتنظيم وهيكلة أعمال الأسرة تحت شعار الاستدامة والحوكمة
+                </p>
+
+                <div className="council-layout">
+                    {/* President */}
+                    <div className="council-box president fade-in-up">
+                        <h3>رئيس المجلس</h3>
+                        <p>عبدالرحمن علي الشقحاء</p>
+                    </div>
+
+                    <div className="connector"></div>
+
+                    {/* Members */}
+                    <div className="council-box members glass-panel fade-in-up delay-1">
+                        <h3>أعضاء المجلس</h3>
+                        <ul>
+                            <li>حسين بن تركي الشقحاء</li>
+                            <li>رائد بن عبدالله الشقحاء</li>
+                            <li>طارق بن عبدالرحمن الشقحاء</li>
+                            <li>منصور بن عبدالوهاب الشقحاء</li>
+                            <li>صالح بن عبدالعزيز الشقحاء</li>
+                        </ul>
+                    </div>
+
+                    {/* Committees & Goals */}
+                    <div className="council-grid">
+                        <div className="council-box glass-panel fade-in-up delay-2">
+                            <h3 className="gold-text">اللجان</h3>
+                            <ul className="committees-list">
+                                <li>اللجنة التنفيذية</li>
+                                <li>لجنة الصندوق</li>
+                                <li>لجنة الجائزة العلمية</li>
+                                <li>لجنة المعلومات</li>
+                                <li>لجنة المناسبات</li>
+                                <li>اللجنة الإعلامية</li>
+                            </ul>
+                        </div>
+
+                        <div className="council-box glass-panel fade-in-up delay-3 goals">
+                            <h3 className="gold-text">أهداف المجلس</h3>
+                            <div className="goal-item">
+                                <span className="goal-num">١</span>
+                                <div className="goal-text">
+                                    <h4>الاستدامة</h4>
+                                    <p>ضمان استمرارية أعمال ومشاريع الأسرة للأجيال القادمة</p>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <span className="goal-num">٢</span>
+                                <div className="goal-text">
+                                    <h4>الحوكمة</h4>
+                                    <p>تطبيق أفضل معايير الإدارة والشفافية والمساءلة</p>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <span className="goal-num">٣</span>
+                                <div className="goal-text">
+                                    <h4>التواصل</h4>
+                                    <p>تعزيز روابط القربى والتآلف بين أفراد الأسرة</p>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <span className="goal-num">٤</span>
+                                <div className="goal-text">
+                                    <h4>التنمية</h4>
+                                    <p>دعم وتطوير قدرات أبناء الأسرة وتمكينهم</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Council;

@@ -1,0 +1,36 @@
+.brand-mark {
+    background-color: var(--color-bg);
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+}
+
+.brand-mark-svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+.brand-svg {
+    max-width: 100%;
+    width: 750px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.brand-svg:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .brand-svg {
+        width: 250px;
+    }
+}
