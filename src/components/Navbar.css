@@ -39,7 +39,7 @@
 
 .navbar-caravan {
     justify-self: center;
-    width: 550px;
+    width: 800px;
     height: 60px;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
 }
 
 .caravan-img {
-    width: 55%;
+    width: 65%;
     object-fit: cover;
     height: auto;
     transition: var(--transition);
@@ -148,8 +148,6 @@
         align-items: center;
         padding: 0 1rem;
         width: 100%;
-        position: relative;
-        /* Base for absolute caravan centering */
     }
 
     .navbar-brand,
@@ -207,26 +205,28 @@
     }
 
     .navbar-caravan {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 180px;
-        height: 40px;
+        justify-self: center;
+        width: 250px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
+        margin: 0 auto;
     }
 
     .caravan-img {
-        width: 80%;
+        width: 85%;
+        /* Slightly larger for mobile */
     }
 
     .caravan-img:first-child {
-        transform: translateX(-2%);
+        transform: translateX(-3%);
+        /* Minimized space */
     }
 
     .caravan-img:last-child {
-        transform: translateX(2%);
+        transform: translateX(3%);
+        /* Minimized space */
     }
 }
