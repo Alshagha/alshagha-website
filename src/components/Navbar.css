@@ -39,8 +39,8 @@
 
 .navbar-caravan {
     justify-self: center;
-    width: 600px;
-    height: 60px;
+    width: 450px;
+    height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,16 +52,17 @@
     width: 50%;
     object-fit: cover;
     height: auto;
+    mix-blend-mode: multiply;
     transition: var(--transition);
     opacity: 0.9;
 }
 
 .caravan-img:first-child {
-    transform: translateX(5%);
+    transform: translateX(0);
 }
 
 .caravan-img:last-child {
-    transform: translateX(-5%);
+    transform: translateX(0);
 }
 
 .navbar-links {
@@ -206,25 +207,22 @@
 
     .navbar-caravan {
         justify-self: center;
-        width: 180px;
-        height: 50px;
+        width: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
-        margin: 0 auto;
     }
 
     .caravan-img {
-        width: 200px;
-        flex-shrink: 0;
+        width: 60%;
     }
 
     .caravan-img:first-child {
-        margin-right: -80px;
+        transform: translateX(-15%);
     }
 
     .caravan-img:last-child {
-        margin-left: -200px;
+        transform: translateX(15%);
     }
 }
