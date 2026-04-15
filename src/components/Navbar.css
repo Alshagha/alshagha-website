@@ -224,12 +224,12 @@
     }
 
     .caravan-img:first-child {
-        transform: translateX(10%);
+        transform: translateX(50%);
         /* Close the gap */
     }
 
     .caravan-img:last-child {
-        transform: translateX(10%);
+        transform: translateX(50%);
         /* Close the gap */
     }
 }
