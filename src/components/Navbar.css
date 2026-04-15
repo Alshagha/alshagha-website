@@ -229,7 +229,7 @@
     }
 
     .caravan-img:last-child {
-        transform: translateX(20%);
+        transform: translateX(-20%);
         /* Close the gap */
     }
 }
