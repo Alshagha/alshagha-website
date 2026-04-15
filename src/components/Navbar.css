@@ -206,7 +206,9 @@
 
     .navbar-caravan {
         justify-self: center;
-        width: 170px;
+        width: 250px;
+        /* Increased from 170px */
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -214,7 +216,8 @@
     }
 
     .caravan-img {
-        width: 60%;
+        width: 80%;
+        /* Increased from 60% */
     }
 
     .caravan-img:first-child {
