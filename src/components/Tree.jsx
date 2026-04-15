@@ -25,17 +25,18 @@ const Tree = () => {
 
                     <div className="tree-image-wrapper">
                         <img
-                            src="/images/family_tree.png"
+                            src="/images/family_tree.jpg"
                             alt="شجرة عائلة الشقحاء"
                             className="tree-image"
+                            loading="lazy"
                         />
                     </div>
 
                     <div className="tree-actions">
-                        <a href="/images/family_tree.png" target="_blank" rel="noreferrer" className="btn tree-btn">
+                        <a href="/images/family_tree.jpg" target="_blank" rel="noreferrer" className="btn tree-btn">
                             <FaSearchPlus style={{ fontSize: '1.2rem' }} /> عرض الشجرة
                         </a>
-                        <a href="/images/family_tree.png" download="شجرة_عائلة_الشقحاء.png" className="btn tree-btn">
+                        <a href="/images/family_tree.jpg" download="شجرة_عائلة_الشقحاء.jpg" className="btn tree-btn">
                             <FaDownload style={{ fontSize: '1.2rem' }} /> تنزيل الشجرة
                         </a>
                     </div>
