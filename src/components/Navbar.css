@@ -206,29 +206,25 @@
 
     .navbar-caravan {
         justify-self: center;
-        width: 180px;
-        /* Reduced to pull them closer */
+        width: 250px;
         height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
         margin: 0 auto;
-        gap: 0;
     }
 
     .caravan-img {
-        width: 85%;
-        /* Bigger images inside smaller container */
+        width: 100px;
+        flex-shrink: 0;
     }
 
     .caravan-img:first-child {
-        transform: translateX(35%);
-        /* Force Aggressive Overlap */
+        margin-right: -25px;
     }
 
     .caravan-img:last-child {
-        transform: translateX(-35%);
-        /* Force Aggressive Overlap */
+        margin-left: -25px;
     }
 }
