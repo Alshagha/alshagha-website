@@ -52,9 +52,7 @@
     width: 50%;
     object-fit: cover;
     height: auto;
-    mix-blend-mode: multiply;
-    filter: brightness(1.05) contrast(1.05);
-    /* Forces off-white backgrounds to pure white for better blending */
+    /* Native PNG transparency used */
     transition: var(--transition);
     opacity: 0.9;
 }
