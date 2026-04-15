@@ -221,10 +221,10 @@
     }
 
     .caravan-img:first-child {
-        margin-right: -10px;
+        margin-right: 0px;
     }
 
     .caravan-img:last-child {
-        margin-left: -200px;
+        margin-left: -300px;
     }
 }
