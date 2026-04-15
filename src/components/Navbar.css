@@ -52,7 +52,7 @@
     width: 50%;
     object-fit: cover;
     height: auto;
-    /* Native PNG transparency used */
+    mix-blend-mode: multiply;
     transition: var(--transition);
     opacity: 0.9;
 }
