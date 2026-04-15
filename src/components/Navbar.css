@@ -99,32 +99,47 @@
 
 .menu-toggle {
     display: none;
-    background: transparent;
-    border: none;
+    background: rgba(170, 134, 33, 0.1);
+    border: 1.5px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 0.6rem;
     cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+.menu-toggle:hover {
+    background: rgba(170, 134, 33, 0.2);
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
     display: block;
-    width: 30px;
-    height: 3px;
-    background-color: var(--color-text);
+    width: 24px;
+    height: 2.5px;
+    background-color: var(--color-primary);
+    border-radius: 4px;
     position: relative;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger::before {
     content: '';
     position: absolute;
     top: -8px;
+    left: 0;
 }
 
 .hamburger::after {
     content: '';
     position: absolute;
     top: 8px;
+    left: 0;
 }
 
 .menu-toggle.open .hamburger {
