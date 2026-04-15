@@ -40,7 +40,7 @@
 .navbar-caravan {
     justify-self: center;
     width: 450px;
-    height: 0;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@
     width: 50%;
     object-fit: cover;
     height: auto;
-    mix-blend-mode: multiply;
+    /* mix-blend-mode: multiply; Removed to avoid invisibility on white backgrounds */
     transition: var(--transition);
     opacity: 0.9;
 }
