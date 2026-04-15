@@ -39,17 +39,29 @@
 
 .navbar-caravan {
     justify-self: center;
-    width: 200px;
-    /* Reduced width for simpler layout */
+    width: 450px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
+    pointer-events: none;
 }
 
 .caravan-img {
-    width: 70px;
+    width: 50%;
+    object-fit: cover;
     height: auto;
+    transition: var(--transition);
+    opacity: 0.9;
+}
+
+.caravan-img:first-child {
+    transform: translateX(0);
+}
+
+.caravan-img:last-child {
+    transform: translateX(0);
 }
 
 .navbar-links {
