@@ -220,7 +220,6 @@
 
     .caravan-img {
         width: 80%;
-        /* Increased from 60% */
     }
 
     .caravan-img:first-child {
@@ -229,7 +228,7 @@
     }
 
     .caravan-img:last-child {
-        transform: translateX(-20%);
+        transform: translateX(-45%);
         /* Close the gap */
     }
 }
