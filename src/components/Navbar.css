@@ -225,6 +225,6 @@
     }
 
     .caravan-img:last-child {
-        margin-left: 150px;
+        margin-left: -100px;
     }
 }
