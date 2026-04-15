@@ -216,7 +216,7 @@
     }
 
     .caravan-img {
-        width: 80px;
+        width: 100px;
         flex-shrink: 0;
     }
 
@@ -225,6 +225,6 @@
     }
 
     .caravan-img:last-child {
-        margin-left: -25px;
+        margin-left: -50px;
     }
 }
