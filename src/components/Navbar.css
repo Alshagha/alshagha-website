@@ -99,21 +99,9 @@
 
 .menu-toggle {
     display: none;
-    background: rgba(170, 134, 33, 0.1);
-    border: 1.5px solid var(--color-primary);
-    border-radius: 8px;
-    padding: 0.6rem;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-}
-
-.menu-toggle:hover {
-    background: rgba(170, 134, 33, 0.2);
 }
 
 .hamburger,
@@ -121,25 +109,23 @@
 .hamburger::after {
     display: block;
     width: 24px;
-    height: 2.5px;
+    height: 2px;
     background-color: var(--color-primary);
-    border-radius: 4px;
     position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition);
+    border-radius: 2px;
 }
 
 .hamburger::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 0;
+    top: -7px;
 }
 
 .hamburger::after {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 0;
+    top: 7px;
 }
 
 .menu-toggle.open .hamburger {
@@ -156,7 +142,7 @@
     transform: rotate(-45deg);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .navbar-container {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
@@ -170,7 +156,12 @@
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .navbar-brand.hidden,
+    .navbar-brand.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
     .navbar-caravan.hidden {
         opacity: 0;
         visibility: hidden;
@@ -195,19 +186,21 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 75%;
-        max-width: 320px;
+        width: 80%;
+        max-width: 300px;
         height: 100vh;
-        background: rgba(252, 251, 249, 0.98);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background: rgba(252, 251, 249, 0.9);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2.5rem;
+        gap: 2rem;
+        border-right: none;
         border-left: 1px solid rgba(170, 134, 33, 0.1);
-        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(170, 134, 33, 0.05);
+        padding: 2rem;
     }
 
     .navbar-links.active {
@@ -215,13 +208,25 @@
     }
 
     .navbar-links a {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 700;
+        color: var(--color-text);
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-links a:hover {
+        background: rgba(170, 134, 33, 0.05);
+        color: var(--color-primary);
+        transform: scale(1.05);
     }
 
     .navbar-caravan {
         justify-self: center;
-        width: 170px;
+        width: 140px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -20,7 +20,6 @@ const Navbar = ({ scrolled }) => {
                 <button
                     className={`menu-toggle ${menuOpen ? 'open' : ''}`}
                     onClick={() => setMenuOpen(!menuOpen)}
-                    aria-label="القائمة"
                 >
                     <span className="hamburger"></span>
                 </button>
