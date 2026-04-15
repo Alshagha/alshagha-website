@@ -148,6 +148,8 @@
         align-items: center;
         padding: 0 1rem;
         width: 100%;
+        position: relative;
+        /* Base for absolute caravan centering */
     }
 
     .navbar-brand,
@@ -205,29 +207,26 @@
     }
 
     .navbar-caravan {
-        justify-self: center;
-        width: 150px;
-        /* Reduced to leave room for brand and menu */
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
         height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
-        margin: 0 auto;
     }
 
     .caravan-img {
-        width: 70%;
-        /* Slightly smaller for mobile optimization */
+        width: 80%;
     }
 
     .caravan-img:first-child {
-        transform: translateX(-5%);
-        /* Minimized space */
+        transform: translateX(-2%);
     }
 
     .caravan-img:last-child {
-        transform: translateX(5%);
-        /* Minimized space */
+        transform: translateX(2%);
     }
 }
