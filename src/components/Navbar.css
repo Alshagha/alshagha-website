@@ -39,7 +39,7 @@
 
 .navbar-caravan {
     justify-self: center;
-    width: 500px;
+    width: 600px;
     height: 60px;
     display: flex;
     align-items: center;
@@ -57,11 +57,11 @@
 }
 
 .caravan-img:first-child {
-    transform: translateX(-2%);
+    transform: translateX(5%);
 }
 
 .caravan-img:last-child {
-    transform: translateX(2%);
+    transform: translateX(-5%);
 }
 
 .navbar-links {
@@ -216,17 +216,14 @@
     }
 
     .caravan-img {
-        width: 80%;
-        /* Slightly larger for mobile */
+        width: 75%;
     }
 
     .caravan-img:first-child {
-        transform: translateX(-0.2%);
-        /* Minimized space */
+        transform: translateX(15%);
     }
 
     .caravan-img:last-child {
-        transform: translateX(0.2%);
-        /* Minimized space */
+        transform: translateX(-15%);
     }
 }
