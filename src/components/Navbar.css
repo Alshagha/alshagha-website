@@ -206,25 +206,28 @@
 
     .navbar-caravan {
         justify-self: center;
-        width: 250px;
-        /* Increased from 170px */
-        height: 50px;
+        width: 150px;
+        /* Reduced to leave room for brand and menu */
+        height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
+        margin: 0 auto;
     }
 
     .caravan-img {
-        width: 80%;
-        /* Increased from 60% */
+        width: 70%;
+        /* Slightly smaller for mobile optimization */
     }
 
     .caravan-img:first-child {
-        transform: translateX(-15%);
+        transform: translateX(-5%);
+        /* Minimized space */
     }
 
     .caravan-img:last-child {
-        transform: translateX(15%);
+        transform: translateX(5%);
+        /* Minimized space */
     }
 }
