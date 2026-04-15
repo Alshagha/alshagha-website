@@ -13,8 +13,8 @@ const Navbar = ({ scrolled }) => {
 
                 <div className={`navbar-caravan ${menuOpen ? 'hidden' : ''}`}>
                     {/* Using the custom image the user will provide */}
-                    <img src="/images/caravan.png" alt="قافلة" className="caravan-img" />
-                    <img src="/images/caravan.png" alt="قافلة" className="caravan-img" />
+                    <img src="/images/caravann.png" alt="قافلة" className="caravan-img" />
+                    <img src="/images/caravann.png" alt="قافلة" className="caravan-img" />
                 </div>
 
                 <button
