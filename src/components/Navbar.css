@@ -39,25 +39,30 @@
 
 .navbar-caravan {
     justify-self: center;
-    width: auto;
-    /* بدل 600px */
-    height: 60px;
+    width: 450px;
+    height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    /* المسافة بينهم */
-    margin: 0 auto;
+    margin: 0 1rem;
     pointer-events: none;
 }
 
 .caravan-img {
-    width: clamp(120px, 20vw, 240px);
-    object-fit: contain;
+    width: 50%;
+    object-fit: cover;
     height: auto;
     mix-blend-mode: multiply;
     transition: var(--transition);
     opacity: 0.9;
+}
+
+.caravan-img:first-child {
+    transform: translateX(0);
+}
+
+.caravan-img:last-child {
+    transform: translateX(0);
 }
 
 .navbar-links {
@@ -201,13 +206,16 @@
     }
 
     .navbar-caravan {
-        width: auto;
-        gap: 10px;
-        /* أقل شوي عشان الشاشة صغيرة */
+        justify-self: center;
+        width: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
     }
 
     .caravan-img {
-        width: clamp(120px, 28vw, 160px);
+        width: 60%;
     }
 
     .caravan-img:first-child {
