@@ -8,6 +8,7 @@ import Tree from './components/Tree';
 import Council from './components/Council';
 import BrandMark from './components/BrandMark';
 import References from './components/References';
+import FamilyPlatform from './components/FamilyPlatform';
 import Footer from './components/Footer';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <History />
       <Figures />
       <Tree />
+      <FamilyPlatform />
       <Council />
       <BrandMark />
       <References />

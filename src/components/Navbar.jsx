@@ -28,6 +28,7 @@ const Navbar = ({ scrolled }) => {
                     <li><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></li>
                     <li><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></li>
                     <li><a href="#tree" onClick={() => setMenuOpen(false)}>شجرة الأسرة</a></li>
+                    <li><a href="#platform" onClick={() => setMenuOpen(false)}>المنصة الرقمية</a></li>
                     <li><a href="#council" onClick={() => setMenuOpen(false)}>مجلس الأسرة</a></li>
                     <li><a href="#brand-mark" onClick={() => setMenuOpen(false)}>وسم الأسرة</a></li>
                 </ul>
