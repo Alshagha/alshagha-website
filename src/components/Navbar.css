@@ -52,8 +52,7 @@
 }
 
 .caravan-img {
-    width: 120px;
-    /* حجم مناسب للابتوب */
+    width: clamp(120px, 20vw, 240px);
     object-fit: contain;
     height: auto;
     mix-blend-mode: multiply;
@@ -208,8 +207,7 @@
     }
 
     .caravan-img {
-        width: 90px;
-        /* أكبر من قبل (كان 60%) */
+        width: clamp(120px, 28vw, 160px);
     }
 
     .caravan-img:first-child {
