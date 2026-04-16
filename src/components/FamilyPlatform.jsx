@@ -20,14 +20,14 @@ const FamilyPlatform = () => {
                             </a>
 
                             <div className="store-buttons">
-                                <a href="https://apps.apple.com/app/id1106680509" target="_blank" rel="noreferrer" className="store-btn">
+                                <a href="https://apps.apple.com/app/id6683282889" target="_blank" rel="noreferrer" className="store-btn">
                                     <FaAppStore className="store-icon" />
                                     <div className="store-text">
                                         <span>Download on the</span>
                                         <strong>App Store</strong>
                                     </div>
                                 </a>
-                                <a href="https://play.google.com/store/apps/details?id=com.awraq.tree" target="_blank" rel="noreferrer" className="store-btn">
+                                <a href="https://play.google.com/store/apps/details?id=com.awraq" target="_blank" rel="noreferrer" className="store-btn">
                                     <FaGooglePlay className="store-icon" />
                                     <div className="store-text">
                                         <span>Get it on</span>
