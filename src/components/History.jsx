@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaUsers, FaHome } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaUsers, FaHome, FaNetworkWired } from 'react-icons/fa';
 import './History.css';
 
 const History = () => {
@@ -49,6 +49,19 @@ const History = () => {
                             <h3 className="card-title">استقرار الجد المؤسس</h3>
                             <p className="card-text">
                                 استقر الجد الجامع لأسرة الشقحاء، منصور بن محمد بن حمود بعد قدوم جده حمود من بلدة وادي الصدر إلى مدينة عنيزة. وقد تُوفي الجد منصور في عنيزة عام ١٢٧٢ هـ. وقد خلف ثلاثة أبناء هم: محمد، صالح، ناصر.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Item 4 */}
+                    <div className="timeline-item right fade-in-up delay-4">
+                        <div className="timeline-icon">
+                            <FaNetworkWired />
+                        </div>
+                        <div className="timeline-content glass-panel">
+                            <h3 className="card-title">فرع عائلة المنصور</h3>
+                            <p className="card-text">
+                                يمثل فرع عائلة المنصور الامتداد المبارك لذرية الجد منصور بن محمد بن حمود، والذين توزعوا في أرجاء المملكة العربية السعودية، وسكنوا مدنها، مساهمين بجدارة في مسيرة البناء والتنمية وتولي المناصب القيادية، مع الحفاظ الدائم على تواصلهم الأسري وتراثهم العريق.
                             </p>
                         </div>
                     </div>
