@@ -38,7 +38,7 @@ const FamilyPlatform = () => {
                         </div>
 
                         <div className="platform-note">
-                            <p>يمكن لجميع أفراد الأسرة الانضمام عبر طلب كود الدعوة الخاص من مجلس العائلة.</p>
+                            <p>يمكن لجميع أفراد الأسرة الانضمام عبر الكود الخاص الموجود بالرابط</p>
                         </div>
                     </div>
 
@@ -50,8 +50,9 @@ const FamilyPlatform = () => {
                         </div>
                         <div className="floating-elements">
                             <div className="float-badge b1">شجرة تفاعلية</div>
-                            <div className="float-badge b2">أرشيف الصور</div>
-                            <div className="float-badge b3">أخبار الأسرة</div>
+                            <div className="float-badge b2">تحليل صلة القرابة</div>
+                            <div className="float-badge b3">مستندات العائلة</div>
+                            <div className="float-badge b4">أخبار الأسرة</div>
                         </div>
                     </div>
                 </div>

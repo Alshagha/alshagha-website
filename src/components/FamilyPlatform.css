@@ -154,21 +154,27 @@
 }
 
 .b1 {
-    top: 15%;
-    left: -10%;
+    top: 10%;
+    left: -15%;
     animation-delay: 0s;
 }
 
 .b2 {
-    top: 45%;
-    right: -10%;
-    animation-delay: 2s;
+    top: 35%;
+    right: -15%;
+    animation-delay: 1.5s;
 }
 
 .b3 {
-    bottom: 15%;
-    left: 0%;
-    animation-delay: 4s;
+    bottom: 35%;
+    left: -10%;
+    animation-delay: 3s;
+}
+
+.b4 {
+    bottom: 10%;
+    right: -5%;
+    animation-delay: 4.5s;
 }
 
 @keyframes float {
