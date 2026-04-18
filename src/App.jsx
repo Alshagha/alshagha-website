@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import History from './components/History';
 import Figures from './components/Figures';
-import AlMansour from './components/AlMansour';
 import Tree from './components/Tree';
 import Council from './components/Council';
 import BrandMark from './components/BrandMark';
@@ -28,7 +27,6 @@ function App() {
       <Navbar scrolled={scrolled} />
       <Hero />
       <History />
-      <AlMansour />
       <Figures />
       <Tree />
       <FamilyPlatform />

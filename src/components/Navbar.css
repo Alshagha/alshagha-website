@@ -226,3 +226,31 @@
         transform: translateX(15%);
     }
 }
+
+@media (max-width: 400px) {
+    .navbar-container {
+        padding: 0 0.8rem;
+    }
+
+    .navbar-brand {
+        font-size: 0.95rem;
+    }
+
+    .navbar-caravan {
+        width: 120px;
+    }
+
+    .caravan-img {
+        width: 55%;
+    }
+}
+
+@media (max-width: 350px) {
+    .navbar-caravan {
+        display: none;
+    }
+
+    .navbar-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
