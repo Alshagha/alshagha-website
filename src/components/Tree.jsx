@@ -21,6 +21,10 @@ const Tree = () => {
                             <h4>فرع صالح</h4>
                             <p>ابن منصور بن محمد ابن حمود</p>
                         </div>
+                        <div className="branch">
+                            <h4>فرع ناصر</h4>
+                            <p>ابن منصور بن محمد ابن حمود</p>
+                        </div>
                     </div>
 
                     <div className="tree-image-wrapper">
