@@ -15,7 +15,7 @@ const Hero = () => {
                     <span className="gold-text">أسرة الشقحاء</span>
                 </h1>
                 <p className="hero-text delay-3">
-                    من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر،و حاضر مشرق،و مستقبل واعد
+                    من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر،و حاضر مشرق،و مستقبل واعد.
                 </p>
                 <a href="#history" className="hero-btn delay-3 fade-in-up">اكتشف تاريخنا</a>
             </div>
