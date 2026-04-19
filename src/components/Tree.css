@@ -86,5 +86,5 @@
     background: var(--color-primary);
     color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    box-shadow: 0 10px 25px rgba(170, 134, 33, 0.25);
 }

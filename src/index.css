@@ -1,30 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 
 :root {
-  /* Alshagha Family Color Palette - Cinematic Dark Theme */
-  --color-primary: #d4af37;
-  /* Glowing Gold */
-  --color-primary-dark: #aa8621;
-  --color-secondary: #0f172a;
+  /* Alshagha Family Color Palette - Light Theme */
+  --color-primary: #aa8621;
+  --color-primary-dark: #8c6a17;
+  --color-secondary: #0a2540;
 
-  --color-bg: #05080f;
-  /* Deep desert night sky */
-  --color-surface: rgba(15, 23, 42, 0.6);
-  /* Translucent dark surface */
+  --color-bg: #fcfbf9;
+  /* Off-white / Cream background */
+  --color-surface: #ffffff;
 
-  --color-text: #fcfbf9;
-  /* Off-white for readability */
-  --color-text-muted: #94a3b8;
-  /* Cool gray */
+  --color-text: #2c2217;
+  /* Dark brown text for contrast and elegance */
+  --color-text-muted: #5e5246;
 
   /* Prioritize LYON font, use Cairo as fallback */
   --font-base: 'LYON', 'Lyon Arabic', 'Lyon', 'Cairo', Tahoma, Arial, sans-serif;
   --font-heading: 'LYON', 'Lyon Arabic', 'Lyon', 'Cairo', Tahoma, Arial, sans-serif;
 
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --blur: blur(12px);
+  --transition: all 0.3s ease-in-out;
+  --blur: blur(10px);
 }
-
 
 * {
   margin: 0;
@@ -110,17 +106,14 @@ ul {
   color: var(--color-primary);
 }
 
-/* Glassmorphism helpers for Dark Theme */
+/* Glassmorphism helpers */
 .glass-panel {
-  background: var(--color-surface);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  /* Subtle gold border */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(170, 134, 33, 0.2);
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
-
 
 @media (max-width: 768px) {
   .container {

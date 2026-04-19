@@ -14,7 +14,6 @@ import References from './components/References';
 import FamilyPlatform from './components/FamilyPlatform';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
-import GoldenThread from './components/GoldenThread';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +41,6 @@ function App() {
 
   return (
     <AnimatePresence>
-      <GoldenThread />
       <div className="app-container">
         <ScrollProgress />
         <Navbar scrolled={scrolled} />
