@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp } from '../utils/animations';
 import './Figures.css';
 import { GiCrossedSwords, GiCrown } from 'react-icons/gi';
 
 const Figures = () => {
     const [lightboxImg, setLightboxImg] = useState(null);
-    const targetRef = useRef(null);
+    const sliderRef = useRef(null);
 
     const figures = [
         {
@@ -33,95 +33,100 @@ const Figures = () => {
         }
     ];
 
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start start", "end end"]
-    });
+    const scrollPrev = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: window.innerWidth * 0.8, behavior: 'smooth' });
+        }
+    };
 
-    const scrollEnd = `-${100 * (figures.length - 1) / figures.length}%`;
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", scrollEnd]);
+    const scrollNext = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: -window.innerWidth * 0.8, behavior: 'smooth' });
+        }
+    };
 
     return (
-        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 100}vh` }}>
-            <div className="figures-sticky-container">
-                <div className="figures-header-absolute">
-                    <div className="container">
-                        <motion.h2
-                            variants={fadeInUp}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                            className="section-title text-center"
-                        >
-                            أعلام الأسرة والشخصيات البارزة
-                        </motion.h2>
-                        <motion.p
-                            variants={fadeInUp}
-                            initial="initial"
-                            whileInView="animate"
-                            viewport={{ once: true }}
-                            className="section-subtitle text-center"
-                        >
-                            رحلة عبر الزمن مع قامات أرست دعائم الأسرة
-                        </motion.p>
-                    </div>
-                </div>
+        <section className="figures-snap-section section-padding" id="figures">
+            <div className="container">
+                <motion.div
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="figures-header-normal"
+                >
+                    <h2 className="section-title text-center">أعلام الأسرة والشخصيات البارزة</h2>
+                    <p className="section-subtitle text-center">
+                        رحلة عبر الزمن مع قامات أرست دعائم الأسرة
+                    </p>
+                </motion.div>
+            </div>
 
-                <div className="figures-slider-viewport">
-                    <motion.div
-                        className="figures-slider-track"
-                        style={{ x, width: `${figures.length * 100}vw` }}
-                    >
-                        {figures.map((fig, idx) => (
-                            <div key={idx} className="figure-h-card-wrapper" style={{ width: '100vw' }}>
-                                <div className="container h-100 d-flex-center">
-                                    <div className="figure-details-pane glass-panel">
-                                        <div className="details-header">
-                                            <div className="details-icon">{fig.icon}</div>
-                                            <div className="details-title">
-                                                <h3>{fig.name}</h3>
-                                                <span className="born-badge">تاريخ الميلاد: {fig.born}</span>
-                                            </div>
+            <div className="figures-slider-viewport" ref={sliderRef}>
+                <div className="figures-slider-track">
+                    {figures.map((fig, idx) => (
+                        <div key={idx} className="figure-snap-card">
+                            <div className="container">
+                                <div className="figure-details-pane glass-panel">
+                                    <div className="details-header">
+                                        <div className="details-icon">{fig.icon}</div>
+                                        <div className="details-title">
+                                            <h3>{fig.name}</h3>
+                                            <span className="born-badge">تاريخ الميلاد: {fig.born}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="details-body">
+                                        <div className="fig-desc-text">
+                                            {fig.desc.split('\n\n').map((paragraph, i) => (
+                                                <p key={i}>{paragraph}</p>
+                                            ))}
                                         </div>
 
-                                        <div className="details-body">
-                                            <div className="fig-desc-text">
-                                                {fig.desc.split('\n\n').map((paragraph, i) => (
-                                                    <p key={i}>{paragraph}</p>
-                                                ))}
+                                        <div className="details-body-secondary">
+                                            <div className="fig-quote-box">
+                                                <p>{fig.highlights}</p>
                                             </div>
 
-                                            <div className="details-body-secondary">
-                                                <div className="fig-quote-box">
-                                                    <p>{fig.highlights}</p>
-                                                </div>
-
-                                                {fig.testaments.length > 0 && (
-                                                    <div className="fig-testaments">
-                                                        <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
-                                                        <div className="testaments-grid">
-                                                            {fig.testaments.map((img, i) => (
-                                                                <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
-                                                                    <motion.img
-                                                                        layoutId={`testament-${img}`}
-                                                                        src={img}
-                                                                        alt={`وثيقة ${i + 1}`}
-                                                                        loading="lazy"
-                                                                    />
-                                                                    <div className="zoom-overlay"><span>توسيع</span></div>
-                                                                </div>
-                                                            ))}
-                                                        </div>
+                                            {fig.testaments.length > 0 && (
+                                                <div className="fig-testaments">
+                                                    <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
+                                                    <div className="testaments-grid">
+                                                        {fig.testaments.map((img, i) => (
+                                                            <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
+                                                                <motion.img
+                                                                    layoutId={`testament-${img}`}
+                                                                    src={img}
+                                                                    alt={`وثيقة ${i + 1}`}
+                                                                    loading="lazy"
+                                                                />
+                                                                <div className="zoom-overlay"><span>توسيع</span></div>
+                                                            </div>
+                                                        ))}
                                                     </div>
-                                                )}
-                                            </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </motion.div>
+                        </div>
+                    ))}
                 </div>
+            </div>
+
+            <div className="figures-slider-controls">
+                <button className="slider-nav-btn magnetic-btn" onClick={scrollPrev}>
+                    &rarr;
+                </button>
+                <div className="slider-indicator-dots">
+                    {figures.map((_, i) => (
+                        <div key={i} className="slider-dot" />
+                    ))}
+                </div>
+                <button className="slider-nav-btn magnetic-btn" onClick={scrollNext}>
+                    &larr;
+                </button>
             </div>
 
             {/* Lightbox for testaments */}

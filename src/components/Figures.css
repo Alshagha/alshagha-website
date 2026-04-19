@@ -1,67 +1,47 @@
-.figures-h-scroll {
+.figures-snap-section {
     position: relative;
     background-color: var(--color-bg);
     background-image: radial-gradient(circle at center, rgba(170, 134, 33, 0.05) 0%, transparent 70%);
-}
-
-.figures-sticky-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
+    /* Prevent horizontal scrollbar on body */
 }
 
-.figures-header-absolute {
-    position: absolute;
-    top: max(80px, 10vh);
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    pointer-events: none;
-    /* Let clicks pass through */
+.figures-header-normal {
+    margin-bottom: 2rem;
 }
 
 .figures-slider-viewport {
-    height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
-    padding-top: max(50px, 5vh);
-    /* Space for header */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.figures-slider-viewport::-webkit-scrollbar {
+    display: none;
 }
 
 .figures-slider-track {
     display: flex;
-    height: auto;
-    align-items: center;
+    width: max-content;
 }
 
-.figure-h-card-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.figure-snap-card {
+    width: 100vw;
+    padding: 0 1.5rem;
+    scroll-snap-align: center;
     flex-shrink: 0;
 }
 
-.h-100 {
-    height: 100%;
-}
-
-.d-flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Card details (reused and adapted) */
+/* Card details */
 .figure-details-pane {
     width: 100%;
     max-width: 1200px;
-    max-height: 85vh;
-    /* Prevent overflowing viewport */
-    overflow-y: auto;
     padding: 3rem;
     border-radius: 20px;
     background: var(--color-surface);
@@ -70,20 +50,6 @@
     flex-direction: column;
     border: 1px solid rgba(170, 134, 33, 0.15);
     margin: 0 auto;
-}
-
-/* Hide scrollbar for the pane */
-.figure-details-pane::-webkit-scrollbar {
-    width: 6px;
-}
-
-.figure-details-pane::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.figure-details-pane::-webkit-scrollbar-thumb {
-    background: rgba(170, 134, 33, 0.3);
-    border-radius: 10px;
 }
 
 .details-header {
@@ -227,6 +193,49 @@
     font-weight: 600;
 }
 
+/* Slider Controls */
+.figures-slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.slider-nav-btn {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-nav-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.slider-indicator-dots {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(170, 134, 33, 0.3);
+    transition: background-color 0.3s ease;
+}
+
 /* Lightbox styles */
 .lightbox {
     position: fixed;
@@ -288,8 +297,6 @@
 
     .figure-details-pane {
         padding: 2rem;
-        max-height: 80vh;
-        overflow-y: auto;
     }
 
     .details-header {
