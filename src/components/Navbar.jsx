@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import './Navbar.css';
 
 const Navbar = ({ scrolled }) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 992 : false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 992);
+            if (window.innerWidth > 992) setMenuOpen(false);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -29,8 +39,8 @@ const Navbar = ({ scrolled }) => {
                 <motion.ul
                     className={`navbar-links ${menuOpen ? 'active' : ''}`}
                     variants={staggerContainer}
-                    initial="initial"
-                    animate={menuOpen ? "animate" : "initial"}
+                    initial={isMobile ? "initial" : "animate"}
+                    animate={!isMobile || menuOpen ? "animate" : "initial"}
                 >
                     <motion.li variants={fadeInUp}><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></motion.li>
                     <motion.li variants={fadeInUp}><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></motion.li>
