@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeInUp } from './utils/animations';
 import './App.css';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import History from './components/History';
 import Figures from './components/Figures';
@@ -27,11 +28,7 @@ function App() {
     <AnimatePresence>
       <div className="app-container">
         <Navbar scrolled={scrolled} />
-        <motion.main
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-        >
+        <main className="main-content">
           <Hero />
           <History />
           <Figures />
@@ -40,7 +37,7 @@ function App() {
           <Council />
           <BrandMark />
           <References />
-        </motion.main>
+        </main>
         <Footer />
       </div>
     </AnimatePresence>

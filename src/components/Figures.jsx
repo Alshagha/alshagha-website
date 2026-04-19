@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../utils/animations';
 import './Figures.css';
 import { GiCrossedSwords, GiCrown } from 'react-icons/gi';
 
@@ -39,12 +41,19 @@ const Figures = () => {
                     اختر الشخصية من القائمة الجانبية لاستعراض السيرة الذاتية والوثائق
                 </p>
 
-                <div className="figures-interactive-layout fade-in-up">
+                <motion.div
+                    className="figures-interactive-layout"
+                    variants={staggerContainer}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
                     {/* Right Side: List of Figures */}
                     <div className="figures-list">
                         {figures.map((fig, idx) => (
-                            <div
+                            <motion.div
                                 key={idx}
+                                variants={fadeInUp}
                                 className={`figure-list-item ${activeFig === idx ? 'active' : ''}`}
                                 onClick={() => setActiveFig(idx)}
                             >
@@ -53,12 +62,18 @@ const Figures = () => {
                                     <h3>{fig.name}</h3>
                                     <p>{fig.shortTitle}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
 
                     {/* Left Side: Details Pane */}
-                    <div className="figure-details-pane glass-panel">
+                    <motion.div
+                        className="figure-details-pane glass-panel"
+                        variants={fadeInUp}
+                        key={activeFig}
+                        initial="initial"
+                        animate="animate"
+                    >
                         <div className="details-header">
                             <div className="details-icon">{figures[activeFig].icon}</div>
                             <div className="details-title">
@@ -92,8 +107,8 @@ const Figures = () => {
                                 </div>
                             )}
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Lightbox for testaments */}
                 {lightboxImg && (
