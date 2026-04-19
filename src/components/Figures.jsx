@@ -38,7 +38,9 @@ const Figures = () => {
         offset: ["start start", "end end"]
     });
 
-    const scrollEnd = `-${100 * (figures.length - 1) / figures.length}%`;
+    // In RTL layout, the next flex items are rendered to the left.
+    // To bring them into view, we must translate the track to the RIGHT (positive x).
+    const scrollEnd = `${100 * (figures.length - 1) / figures.length}%`;
     const x = useTransform(scrollYProgress, [0, 1], ["0%", scrollEnd]);
 
     return (
