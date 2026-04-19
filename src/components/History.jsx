@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { slideInLeft, slideInRight } from '../utils/animations';
 import { FaMapMarkerAlt, FaUsers, FaHome } from 'react-icons/fa';
 import './History.css';
 
@@ -17,36 +19,51 @@ const History = () => {
                     <div className="timeline-line"></div>
 
                     {/* Item 1 */}
-                    <div className="timeline-item left fade-in-up delay-1">
+                    <motion.div
+                        className="timeline-item left"
+                        variants={slideInLeft}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
                         <div className="timeline-icon">
                             <FaUsers />
                         </div>
                         <div className="timeline-content glass-panel">
                             <h3 className="card-title">النسب العريق</h3>
                             <p className="card-text">
-                                يعود نسب الأسرة إلى الجد منصور بن محمد بن حمود بن عبد المحسن بن منصور بن محمد من خامس
-                                العفران من قبيلة الحتارشة من هذيل بن إلياس بن مضر بن نزار بن معد بن عدنان، المولود في الحجاز
-                                في وادي الصدر الواقع بين الشرائع والزيمة سنة 1160هـ.                            </p>
+                                يعود نسب الأسرة إلى الجد منصور بن محمد بن حمود بن عبد المحسن بن منصور بن محمد من خامس العفران من قبيلة الحتارشة من هذيل بن إلياس بن مضر بن نزار بن معد بن عدنان، المولود في الحجاز في وادي الصدر الواقع بين الشرائع والزيمة سنة 1160هـ.
+                            </p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Item 2 */}
-                    <div className="timeline-item right fade-in-up delay-2">
+                    <motion.div
+                        className="timeline-item right"
+                        variants={slideInRight}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
                         <div className="timeline-icon">
                             <FaMapMarkerAlt />
                         </div>
                         <div className="timeline-content glass-panel">
                             <h3 className="card-title">الموطن الأصلي</h3>
                             <p className="card-text">
-                                الموطن الأصلي للأسرة ومسقط الرأس هي محافظة عنيزة الواقعة في قلب منطقة القصيم، فهي المقر
-                                التاريخي لأسرة الشقحاء.
-                                وقد استقر فيها الجد الشيخ حمود الحتيرشي الهذلي بعد قدومه مع أسرته من الحجاز من وادي الصدر
-                                (صدر حنين) إلى نجد، وتنقل ما بين مدنها حتى استقر في عنيزة في عام 1220هـ                             </p>
+                                الموطن الأصلي للأسرة ومسقط الرأس هي محافظة عنيزة الواقعة في قلب منطقة القصيم، فهي المقر التاريخي لأسرة الشقحاء. وقد استقر فيها الجد الشيخ حمود الحتيرشي الهذلي بعد قدومه مع أسرته من الحجاز من وادي الصدر (صدر حنين) إلى نجد، وتنقل ما بين مدنها حتى استقر في عنيزة في عام 1220هـ
+                            </p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Item 3 */}
-                    <div className="timeline-item left fade-in-up delay-3">
+                    <motion.div
+                        className="timeline-item left"
+                        variants={slideInLeft}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
                         <div className="timeline-icon">
                             <FaHome />
                         </div>
@@ -56,7 +73,7 @@ const History = () => {
                                 استقر الجد الجامع لأسرة الشقحاء، منصور بن محمد بن حمود بعد قدوم جده حمود من بلدة وادي الصدر إلى مدينة عنيزة. وقد تُوفي الجد منصور في عنيزة عام ١٢٧٢ هـ. وقد خلف ثلاثة أبناء هم: محمد، صالح، ناصر.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

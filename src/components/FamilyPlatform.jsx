@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, scaleUp } from '../utils/animations';
 import './FamilyPlatform.css';
 import { FaAppStore, FaGooglePlay, FaGlobe } from 'react-icons/fa';
 
@@ -7,14 +9,20 @@ const FamilyPlatform = () => {
         <section className="family-platform section-padding" id="platform">
             <div className="container">
                 <div className="platform-grid">
-                    <div className="platform-content fade-in-up">
-                        <h2 className="section-title">منصة الشقحاء الرقمية</h2>
-                        <h3 className="platform-subtitle">شجرة العائلة والتوثيق الرقمي</h3>
-                        <p className="platform-description">
+                    <motion.div
+                        className="platform-content"
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                    >
+                        <motion.h2 variants={fadeInUp} className="section-title">منصة الشقحاء الرقمية</motion.h2>
+                        <motion.h3 variants={fadeInUp} className="platform-subtitle">شجرة العائلة والتوثيق الرقمي</motion.h3>
+                        <motion.p variants={fadeInUp} className="platform-description">
                             وثقنا ماضينا لنبني مستقبلنا. منصة الشقحاء الرقمية هي بوابتكم لاستكشاف شجرة العائلة الممتدة والتواصل مع جميع أفراد الأسرة عبر التاريخ. منصة متكاملة تجمع تراثنا في متناول يديك.
-                        </p>
+                        </motion.p>
 
-                        <div className="platform-actions">
+                        <motion.div variants={fadeInUp} className="platform-actions">
                             <a href="https://alshagha-family.awraq.app/" target="_blank" rel="noreferrer" className="btn btn-primary platform-web-btn">
                                 <FaGlobe className="btn-icon" /> زيارة المنصة عبر الويب
                             </a>
@@ -35,26 +43,56 @@ const FamilyPlatform = () => {
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="platform-note">
+                        <motion.div variants={fadeInUp} className="platform-note">
                             <p>يمكن لجميع أفراد الأسرة الانضمام عبر الكود الخاص الموجود بالرابط.</p>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
-                    <div className="platform-visual fade-in-up">
+                    <motion.div
+                        className="platform-visual"
+                        variants={scaleUp}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ once: true }}
+                    >
                         <div className="phone-mockup">
                             <div className="phone-screen">
                                 <img src="/images/family_tree.png" alt="Family App Preview" className="app-preview" />
                             </div>
                         </div>
                         <div className="floating-elements">
-                            <div className="float-badge b1">شجرة تفاعلية</div>
-                            <div className="float-badge b2">تحليل صلة القرابة</div>
-                            <div className="float-badge b3">مستندات العائلة</div>
-                            <div className="float-badge b4">أخبار الأسرة</div>
+                            <motion.div
+                                className="float-badge b1"
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                شجرة تفاعلية
+                            </motion.div>
+                            <motion.div
+                                className="float-badge b2"
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                            >
+                                تحليل صلة القرابة
+                            </motion.div>
+                            <motion.div
+                                className="float-badge b3"
+                                animate={{ y: [0, -8, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                            >
+                                مستندات العائلة
+                            </motion.div>
+                            <motion.div
+                                className="float-badge b4"
+                                animate={{ y: [0, 8, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                            >
+                                أخبار الأسرة
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

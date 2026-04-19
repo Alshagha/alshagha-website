@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, textReveal } from '../utils/animations';
 import './Hero.css';
 
 const Hero = () => {
@@ -8,17 +10,24 @@ const Hero = () => {
                 <div className="hero-overlay"></div>
             </div>
 
-            <div className="hero-content fade-in-up">
-                <h2 className="hero-subtitle delay-1">تاريخ عريق ومستقبل مشرق</h2>
-                <h1 className="hero-title delay-2">
+            <motion.div
+                className="hero-content"
+                variants={staggerContainer}
+                initial="initial"
+                animate="animate"
+            >
+                <motion.h2 className="hero-subtitle" variants={fadeInUp}>تاريخ عريق ومستقبل مشرق</motion.h2>
+                <motion.h1 className="hero-title" variants={textReveal}>
                     <span style={{ display: 'block', marginBottom: '0.8rem' }}>مرحبًا بكم في موقع</span>
                     <span className="gold-text">أسرة الشقحاء</span>
-                </h1>
-                <p className="hero-text delay-3">
+                </motion.h1>
+                <motion.p className="hero-text" variants={fadeInUp}>
                     من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر،و حاضر مشرق،و مستقبل واعد.
-                </p>
-                <a href="#history" className="hero-btn delay-3 fade-in-up">اكتشف تاريخنا</a>
-            </div>
+                </motion.p>
+                <motion.div variants={fadeInUp}>
+                    <a href="#history" className="hero-btn">اكتشف تاريخنا</a>
+                </motion.div>
+            </motion.div>
 
             <div className="scroll-indicator">
                 <div className="mouse"></div>

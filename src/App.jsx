@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInUp } from './utils/animations';
 import './App.css';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import History from './components/History';
 import Figures from './components/Figures';
@@ -23,18 +24,26 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container">
-      <Navbar scrolled={scrolled} />
-      <Hero />
-      <History />
-      <Figures />
-      <Tree />
-      <FamilyPlatform />
-      <Council />
-      <BrandMark />
-      <References />
-      <Footer />
-    </div>
+    <AnimatePresence>
+      <div className="app-container">
+        <Navbar scrolled={scrolled} />
+        <motion.main
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+        >
+          <Hero />
+          <History />
+          <Figures />
+          <Tree />
+          <FamilyPlatform />
+          <Council />
+          <BrandMark />
+          <References />
+        </motion.main>
+        <Footer />
+      </div>
+    </AnimatePresence>
   );
 }
 

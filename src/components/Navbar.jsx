@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../utils/animations';
 import './Navbar.css';
 
 const Navbar = ({ scrolled }) => {
@@ -24,13 +26,18 @@ const Navbar = ({ scrolled }) => {
                     <span className="hamburger"></span>
                 </button>
 
-                <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-                    <li><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></li>
-                    <li><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></li>
-                    <li><a href="#tree" onClick={() => setMenuOpen(false)}>شجرة الأسرة</a></li>
-                    <li><a href="#council" onClick={() => setMenuOpen(false)}>مجلس الأسرة</a></li>
-                    <li><a href="#brand-mark" onClick={() => setMenuOpen(false)}>وسم آل حمود</a></li>
-                </ul>
+                <motion.ul
+                    className={`navbar-links ${menuOpen ? 'active' : ''}`}
+                    variants={staggerContainer}
+                    initial="initial"
+                    animate={menuOpen ? "animate" : "initial"}
+                >
+                    <motion.li variants={fadeInUp}><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></motion.li>
+                    <motion.li variants={fadeInUp}><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></motion.li>
+                    <motion.li variants={fadeInUp}><a href="#tree" onClick={() => setMenuOpen(false)}>شجرة الأسرة</a></motion.li>
+                    <motion.li variants={fadeInUp}><a href="#council" onClick={() => setMenuOpen(false)}>مجلس الأسرة</a></motion.li>
+                    <motion.li variants={fadeInUp}><a href="#brand-mark" onClick={() => setMenuOpen(false)}>وسم آل حمود</a></motion.li>
+                </motion.ul>
             </div>
         </nav>
     );
