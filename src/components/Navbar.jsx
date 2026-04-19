@@ -24,9 +24,38 @@ const Navbar = ({ scrolled }) => {
                 </a>
 
                 <div className={`navbar-caravan ${menuOpen ? 'hidden' : ''}`}>
-                    {/* Using the custom image the user will provide */}
-                    <img src="/images/caravan.png" alt="قافلة" className="caravan-img" onError={(e) => e.target.style.opacity = 0} />
-                    <img src="/images/caravan.png" alt="قافلة" className="caravan-img" onError={(e) => e.target.style.opacity = 0} />
+                    {/* Using motion.img for a rhythmic walking animation */}
+                    <motion.img
+                        src="/images/caravan.png"
+                        alt="قافلة"
+                        className="caravan-img"
+                        animate={{
+                            x: [0, -5, 0],
+                            y: [0, -2, 0]
+                        }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        onError={(e) => e.target.style.opacity = 0}
+                    />
+                    <motion.img
+                        src="/images/caravan.png"
+                        alt="قافلة"
+                        className="caravan-img"
+                        animate={{
+                            x: [0, -4, 0],
+                            y: [0, -3, 0]
+                        }}
+                        transition={{
+                            duration: 3.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 0.5
+                        }}
+                        onError={(e) => e.target.style.opacity = 0}
+                    />
                 </div>
 
                 <button
