@@ -41,10 +41,12 @@ const Figures = () => {
     // In RTL layout, the next flex items are rendered to the left.
     // To bring them into view, we must translate the track to the RIGHT (positive x).
     const scrollEnd = `${100 * (figures.length - 1) / figures.length}%`;
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", scrollEnd]);
+
+    // Add "pause" segments to the scroll so the user scrolls down a bit before it pans
+    const x = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], ["0%", "0%", scrollEnd, scrollEnd]);
 
     return (
-        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 100}vh` }}>
+        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 150}vh` }}>
             <div className="figures-sticky-container">
                 <div className="figures-header-absolute">
                     <div className="container">
