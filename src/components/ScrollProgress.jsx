@@ -1,0 +1,27 @@
+import React from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
+
+const ScrollProgress = () => {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
+    const progressStyle = {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '4px',
+        backgroundColor: 'var(--color-primary)',
+        transformOrigin: '0%',
+        zIndex: 2000,
+        scaleX
+    };
+
+    return <motion.div style={progressStyle} />;
+};
+
+export default ScrollProgress;

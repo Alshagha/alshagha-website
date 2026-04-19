@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer, scaleUp } from '../utils/animations';
+import MagneticButton from './MagneticButton';
 import './FamilyPlatform.css';
 import { FaAppStore, FaGooglePlay, FaGlobe } from 'react-icons/fa';
 
@@ -23,25 +24,31 @@ const FamilyPlatform = () => {
                         </motion.p>
 
                         <motion.div variants={fadeInUp} className="platform-actions">
-                            <a href="https://alshagha-family.awraq.app/" target="_blank" rel="noreferrer" className="btn btn-primary platform-web-btn">
-                                <FaGlobe className="btn-icon" /> زيارة المنصة عبر الويب
-                            </a>
+                            <MagneticButton strength={0.2} className="platform-web-btn-wrapper">
+                                <a href="https://alshagha-family.awraq.app/" target="_blank" rel="noreferrer" className="btn btn-primary platform-web-btn">
+                                    <FaGlobe className="btn-icon" /> زيارة المنصة عبر الويب
+                                </a>
+                            </MagneticButton>
 
                             <div className="store-buttons">
-                                <a href="https://apps.apple.com/app/id6683282889" target="_blank" rel="noreferrer" className="store-btn">
-                                    <FaAppStore className="store-icon" />
-                                    <div className="store-text">
-                                        <span>Download on the</span>
-                                        <strong>App Store</strong>
-                                    </div>
-                                </a>
-                                <a href="https://play.google.com/store/apps/details?id=com.awraq" target="_blank" rel="noreferrer" className="store-btn">
-                                    <FaGooglePlay className="store-icon" />
-                                    <div className="store-text">
-                                        <span>Get it on</span>
-                                        <strong>Google Play</strong>
-                                    </div>
-                                </a>
+                                <MagneticButton strength={0.1}>
+                                    <a href="https://apps.apple.com/app/id6683282889" target="_blank" rel="noreferrer" className="store-btn">
+                                        <FaAppStore className="store-icon" />
+                                        <div className="store-text">
+                                            <span>Download on the</span>
+                                            <strong>App Store</strong>
+                                        </div>
+                                    </a>
+                                </MagneticButton>
+                                <MagneticButton strength={0.1}>
+                                    <a href="https://play.google.com/store/apps/details?id=com.awraq" target="_blank" rel="noreferrer" className="store-btn">
+                                        <FaGooglePlay className="store-icon" />
+                                        <div className="store-text">
+                                            <span>Get it on</span>
+                                            <strong>Google Play</strong>
+                                        </div>
+                                    </a>
+                                </MagneticButton>
                             </div>
                         </motion.div>
 

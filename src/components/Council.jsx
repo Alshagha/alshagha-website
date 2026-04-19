@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '../utils/animations';
 import './Council.css';
 
 const Council = () => {
@@ -10,17 +12,23 @@ const Council = () => {
                     تم تشكيل مجلس الأسرة لتنظيم وهيكلة أعمال الأسرة تحت شعار الاستدامة والحوكمة
                 </p>
 
-                <div className="council-layout">
+                <motion.div
+                    className="council-layout"
+                    variants={staggerContainer}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                >
                     {/* President */}
-                    <div className="council-box president fade-in-up">
+                    <motion.div className="council-box president" variants={fadeInUp}>
                         <h3>رئيس المجلس</h3>
                         <p>عبدالرحمن علي الشقحاء</p>
-                    </div>
+                    </motion.div>
 
                     <div className="connector"></div>
 
                     {/* Members */}
-                    <div className="council-box members glass-panel fade-in-up delay-1">
+                    <motion.div className="council-box members glass-panel" variants={fadeInUp}>
                         <h3>أعضاء المجلس</h3>
                         <ul>
                             <li>حسين بن تركي الشقحاء</li>
@@ -29,11 +37,11 @@ const Council = () => {
                             <li>منصور بن عبدالوهاب الشقحاء</li>
                             <li>صالح بن عبدالعزيز الشقحاء</li>
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Committees & Goals */}
                     <div className="council-grid">
-                        <div className="council-box glass-panel fade-in-up delay-2">
+                        <motion.div className="council-box glass-panel" variants={fadeInUp}>
                             <h3 className="gold-text">اللجان</h3>
                             <ul className="committees-list">
                                 <li>اللجنة التنفيذية</li>
@@ -43,9 +51,9 @@ const Council = () => {
                                 <li>لجنة المناسبات</li>
                                 <li>اللجنة الإعلامية</li>
                             </ul>
-                        </div>
+                        </motion.div>
 
-                        <div className="council-box glass-panel fade-in-up delay-3 goals">
+                        <motion.div className="council-box glass-panel goals" variants={fadeInUp}>
                             <h3 className="gold-text">أهداف المجلس</h3>
                             <div className="goal-item">
                                 <span className="goal-num">١</span>
@@ -75,9 +83,9 @@ const Council = () => {
                                     <p>دعم وتطوير قدرات أبناء الأسرة وتمكينهم</p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

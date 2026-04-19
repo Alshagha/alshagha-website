@@ -1,14 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { fadeInUp, staggerContainer, textReveal } from '../utils/animations';
+import MagneticButton from './MagneticButton';
 import './Hero.css';
 
 const Hero = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1.2]);
+
     return (
-        <section className="hero" id="home">
-            <div className="hero-background">
-                <div className="hero-overlay"></div>
-            </div>
+        <section className="hero" id="home" ref={containerRef}>
+            <motion.div
+                className="hero-background"
+                style={{ y, scale }}
+            >
+                <motion.div className="hero-overlay" style={{ opacity }}></motion.div>
+            </motion.div>
 
             <motion.div
                 className="hero-content"
@@ -25,7 +39,9 @@ const Hero = () => {
                     من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر،و حاضر مشرق،و مستقبل واعد.
                 </motion.p>
                 <motion.div variants={fadeInUp}>
-                    <a href="#history" className="hero-btn">اكتشف تاريخنا</a>
+                    <MagneticButton strength={0.2}>
+                        <a href="#history" className="hero-btn">اكتشف تاريخنا</a>
+                    </MagneticButton>
                 </motion.div>
             </motion.div>
 
