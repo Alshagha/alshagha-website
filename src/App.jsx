@@ -14,7 +14,6 @@ import References from './components/References';
 import FamilyPlatform from './components/FamilyPlatform';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
-import TimeJourney from './components/TimeJourney';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,8 +46,9 @@ function App() {
         <Navbar scrolled={scrolled} />
         <main className="main-content">
           <Hero />
-          <TimeJourney />
+          <History />
           <Figures />
+          <Tree />
           <FamilyPlatform />
           <Council />
           <BrandMark />

@@ -8,53 +8,48 @@
 
 .history-timeline {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8rem;
-    padding: 0 4rem;
-    margin-top: 4rem;
-    min-width: max-content;
+    max-width: 900px;
+    margin: 4rem auto 0 auto;
 }
 
-/* Central horizontal line */
+/* Central vertical line */
 .timeline-line {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 4px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
     background: rgba(170, 134, 33, 0.2);
-    transform: translateY(-50%);
+    transform: translateX(-50%);
     border-radius: 2px;
 }
 
 .timeline-item {
     position: relative;
-    width: 35vw;
-    min-width: 400px;
+    width: 100%;
+    margin-bottom: 4rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-.timeline-item.top {
+.timeline-item.left {
     justify-content: flex-end;
-    padding-bottom: 50px;
+    /* Note: Since RTL is active, left means flex-end usually, but let's be explicitly grid-based */
 }
 
-.timeline-item.bottom {
+.timeline-item.right {
     justify-content: flex-start;
-    padding-top: 50px;
 }
 
-/* Adjust content positioning */
-.timeline-item.top .timeline-content {
-    margin-bottom: 2rem;
+/* Force left/right sides using absolute targeting based on RTL */
+.timeline-item.left .timeline-content {
+    margin-left: 55%;
+    /* RTL left side */
 }
 
-.timeline-item.bottom .timeline-content {
-    margin-top: 2rem;
+.timeline-item.right .timeline-content {
+    margin-right: 55%;
+    /* RTL right side */
 }
 
 .timeline-icon {
@@ -77,12 +72,11 @@
 }
 
 .timeline-content {
-    width: 100%;
+    width: 40%;
     padding: 2.5rem;
+    border-right: 4px solid var(--color-primary);
     background-color: var(--color-surface);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border-radius: 12px;
-    border: 1px solid rgba(170, 134, 33, 0.1);
 }
 
 .timeline-content:hover {
@@ -90,12 +84,9 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.timeline-item.bottom .timeline-content {
-    border-top: 4px solid var(--color-primary);
-}
-
-.timeline-item.top .timeline-content {
-    border-bottom: 4px solid var(--color-primary);
+.timeline-item.right .timeline-content {
+    border-right: none;
+    border-left: 4px solid var(--color-primary);
 }
 
 .card-title {

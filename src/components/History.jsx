@@ -12,7 +12,7 @@ const History = () => {
                 <p className="section-subtitle text-center">
                     تعد أسرة الشقحاء من أبرز الأسر النجدية المنتمية إلى قبيلة هذيل، وهي
                     واحدة من أسر آل حمود من خامس العفران من الحتارشة من قبيلة هذيل،
-                    المقدار التاريخي لأسرة الشقحاء، وانتشرت في مناطق ومدن المملكة
+                    وقد نشأت الأسرة في محافظة عنيزة، وانتشرت في مناطق ومدن المملكة
                     العربية السعودية.</p>
 
                 <div className="history-timeline">
@@ -20,7 +20,7 @@ const History = () => {
 
                     {/* Item 1 */}
                     <motion.div
-                        className="timeline-item top"
+                        className="timeline-item left"
                         variants={slideInLeft}
                         initial="initial"
                         whileInView="whileInView"
@@ -39,7 +39,7 @@ const History = () => {
 
                     {/* Item 2 */}
                     <motion.div
-                        className="timeline-item bottom"
+                        className="timeline-item right"
                         variants={slideInRight}
                         initial="initial"
                         whileInView="whileInView"
@@ -58,7 +58,7 @@ const History = () => {
 
                     {/* Item 3 */}
                     <motion.div
-                        className="timeline-item top"
+                        className="timeline-item left"
                         variants={slideInLeft}
                         initial="initial"
                         whileInView="whileInView"
