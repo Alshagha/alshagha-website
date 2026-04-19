@@ -20,8 +20,8 @@
     width: 100%;
     z-index: 10;
     pointer-events: none;
-    padding-top: max(40px, 4vh);
-    margin-bottom: max(20px, 2vh);
+    padding-top: max(50px, 6vh);
+    margin-bottom: max(10px, 1vh);
 }
 
 .figures-slider-viewport {
@@ -29,6 +29,8 @@
     width: 100%;
     display: flex;
     align-items: center;
+    min-height: 0;
+    /* Important for flex children to allow inner scrolling */
 }
 
 .figures-slider-track {
@@ -66,6 +68,25 @@
     flex-direction: column;
     border: 1px solid rgba(170, 134, 33, 0.15);
     margin: 0 auto;
+    max-height: 80vh;
+    /* Re-enabled so it doesn't cause clipping */
+    overflow-y: auto;
+    /* Allow reading on mobile */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar for the pane */
+.figure-details-pane::-webkit-scrollbar {
+    width: 6px;
+}
+
+.figure-details-pane::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.figure-details-pane::-webkit-scrollbar-thumb {
+    background: rgba(170, 134, 33, 0.3);
+    border-radius: 10px;
 }
 
 .details-header {
@@ -99,7 +120,8 @@
 
 .details-title h3 {
     font-size: 1.8rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+    /* Down slightly */
     color: var(--color-text);
     font-weight: 800;
 }
@@ -108,10 +130,12 @@
     display: inline-block;
     background: rgba(170, 134, 33, 0.1);
     color: var(--color-primary-dark);
-    padding: 0.3rem 1rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 20px;
     font-size: 0.95rem;
     border: 1px solid rgba(170, 134, 33, 0.2);
+    margin-top: 0.5rem;
+    /* Spaced out slightly */
 }
 
 .fig-desc-text {
@@ -261,19 +285,45 @@
     color: var(--color-primary);
 }
 
+/* Robust Mobile Fixes */
 @media (max-width: 992px) {
     .details-body {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .figure-details-pane {
-        padding: 2rem;
+        padding: 1.5rem;
+        max-height: 75vh;
+        width: 92%;
+        margin: 0 auto;
     }
 
     .details-header {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .details-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .details-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .figures-header-absolute {
+        padding-top: max(20px, 2vh);
+    }
+
+    .testaments-grid {
+        /* Even on mobile, keep them nicely together */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
 }
