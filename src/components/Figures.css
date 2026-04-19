@@ -1,114 +1,72 @@
-.figures {
+.figures-h-scroll {
     position: relative;
     background-color: var(--color-bg);
     background-image: radial-gradient(circle at center, rgba(170, 134, 33, 0.05) 0%, transparent 70%);
 }
 
-.figures-interactive-layout {
-    display: flex;
-    gap: 2rem;
-    margin-top: 3rem;
-    align-items: stretch;
-}
-
-/* Right side list */
-.figures-list {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.figure-list-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: var(--color-surface);
-    border: 1px solid rgba(170, 134, 33, 0.1);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-}
-
-.figure-list-item:hover {
-    transform: translateX(-5px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 20px rgba(170, 134, 33, 0.1);
-}
-
-.figure-list-item.active {
-    color: #fff;
-    border-color: var(--color-primary);
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(170, 134, 33, 0.2);
-}
-
-.active-bg {
-    position: absolute;
+.figures-sticky-container {
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    border-radius: 12px;
-    z-index: 0;
-}
-
-.fig-list-content {
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
+}
+
+.figures-header-absolute {
+    position: absolute;
+    top: max(80px, 10vh);
+    left: 0;
     width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through */
 }
 
-.fig-list-icon {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    transition: var(--transition);
+.figures-slider-viewport {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: max(50px, 5vh);
+    /* Space for header */
 }
 
-.figure-list-item.active .fig-list-icon,
-.figure-list-item.active .fig-list-info p {
-    color: #fff;
+.figures-slider-track {
+    display: flex;
+    height: auto;
+    align-items: center;
 }
 
-.fig-list-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
+.figure-h-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.fig-list-info p {
-    font-size: 1rem;
-    color: var(--color-text-muted);
+.h-100 {
+    height: 100%;
 }
 
-/* Left side details pane */
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card details (reused and adapted) */
 .figure-details-pane {
-    flex: 2;
+    width: 100%;
+    max-width: 1100px;
     padding: 3rem;
-    border-radius: 16px;
+    border-radius: 20px;
     background: var(--color-surface);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    animation: slideInScale 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-@keyframes slideInScale {
-    from {
-        opacity: 0;
-        transform: translateY(15px) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    border: 1px solid rgba(170, 134, 33, 0.15);
+    margin: 0 auto;
 }
 
 .details-header {
@@ -130,6 +88,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .details-title h3 {
@@ -256,7 +215,6 @@
     align-items: center;
     padding: 2rem;
     pointer-events: none;
-    /* Let events pass to backdrop and children */
 }
 
 .lightbox-backdrop {
@@ -267,7 +225,6 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     pointer-events: auto;
-    /* Catch clicks */
 }
 
 .close-btn {
@@ -282,7 +239,6 @@
     transition: color 0.3s;
     z-index: 10000;
     pointer-events: auto;
-    /* Catch clicks */
 }
 
 .lightbox-img {
@@ -293,7 +249,6 @@
     position: relative;
     z-index: 10000;
     pointer-events: auto;
-    /* Catch clicks */
 }
 
 .close-btn:hover {
@@ -301,18 +256,10 @@
 }
 
 @media (max-width: 992px) {
-    .figures-interactive-layout {
-        flex-direction: column;
-    }
-
-    .figures-list {
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-    }
-
-    .figure-list-item {
-        min-width: 250px;
+    .figure-details-pane {
+        padding: 2rem;
+        max-height: 70vh;
+        overflow-y: auto;
     }
 
     .details-header {

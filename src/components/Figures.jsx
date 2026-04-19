@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../utils/animations';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { fadeInUp } from '../utils/animations';
 import './Figures.css';
 import { GiCrossedSwords, GiCrown } from 'react-icons/gi';
 
 const Figures = () => {
-    const [activeFig, setActiveFig] = useState(0);
     const [lightboxImg, setLightboxImg] = useState(null);
+    const targetRef = useRef(null);
 
     const figures = [
         {
@@ -33,129 +33,120 @@ const Figures = () => {
         }
     ];
 
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
+
+    const scrollEnd = `-${100 * (figures.length - 1) / figures.length}%`;
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", scrollEnd]);
+
     return (
-        <section className="figures section-padding" id="figures">
-            <div className="container">
-                <h2 className="section-title text-center">أعلام الأسرة والشخصيات البارزة</h2>
-                <p className="section-subtitle text-center">
-                    اختر الشخصية من القائمة الجانبية لاستعراض السيرة الذاتية والوثائق
-                </p>
-
-                <motion.div
-                    className="figures-interactive-layout"
-                    variants={staggerContainer}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{ once: true }}
-                >
-                    {/* Right Side: List of Figures */}
-                    <div className="figures-list">
-                        {figures.map((fig, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={fadeInUp}
-                                className={`figure-list-item ${activeFig === idx ? 'active' : ''}`}
-                                onClick={() => setActiveFig(idx)}
-                                style={{ position: 'relative' }}
-                            >
-                                {activeFig === idx && (
-                                    <motion.div
-                                        layoutId="activeFigureBg"
-                                        className="active-bg"
-                                        initial={false}
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                    />
-                                )}
-                                <div className="fig-list-content">
-                                    <div className="fig-list-icon">{fig.icon}</div>
-                                    <div className="fig-list-info">
-                                        <h3>{fig.name}</h3>
-                                        <p>{fig.shortTitle}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Left Side: Details Pane */}
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            className="figure-details-pane glass-panel"
-                            key={activeFig}
-                            initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -15, scale: 0.98 }}
-                            transition={{ duration: 0.3 }}
+        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 100}vh` }}>
+            <div className="figures-sticky-container">
+                <div className="figures-header-absolute">
+                    <div className="container">
+                        <motion.h2
+                            variants={fadeInUp}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            className="section-title text-center"
                         >
-                            <div className="details-header">
-                                <div className="details-icon">{figures[activeFig].icon}</div>
-                                <div className="details-title">
-                                    <h3>{figures[activeFig].name}</h3>
-                                    <span className="born-badge">تاريخ الميلاد: {figures[activeFig].born}</span>
-                                </div>
-                            </div>
+                            أعلام الأسرة والشخصيات البارزة
+                        </motion.h2>
+                        <motion.p
+                            variants={fadeInUp}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            className="section-subtitle text-center"
+                        >
+                            رحلة عبر الزمن مع قامات أرست دعائم الأسرة
+                        </motion.p>
+                    </div>
+                </div>
 
-                            <div className="details-body">
-                                <div className="fig-desc-text">
-                                    {figures[activeFig].desc.split('\n\n').map((paragraph, i) => (
-                                        <p key={i}>{paragraph}</p>
-                                    ))}
-                                </div>
+                <div className="figures-slider-viewport">
+                    <motion.div
+                        className="figures-slider-track"
+                        style={{ x, width: `${figures.length * 100}vw` }}
+                    >
+                        {figures.map((fig, idx) => (
+                            <div key={idx} className="figure-h-card-wrapper" style={{ width: '100vw' }}>
+                                <div className="container h-100 d-flex-center">
+                                    <div className="figure-details-pane glass-panel">
+                                        <div className="details-header">
+                                            <div className="details-icon">{fig.icon}</div>
+                                            <div className="details-title">
+                                                <h3>{fig.name}</h3>
+                                                <span className="born-badge">تاريخ الميلاد: {fig.born}</span>
+                                            </div>
+                                        </div>
 
-                                <div className="fig-quote-box">
-                                    <p>{figures[activeFig].highlights}</p>
-                                </div>
+                                        <div className="details-body">
+                                            <div className="fig-desc-text">
+                                                {fig.desc.split('\n\n').map((paragraph, i) => (
+                                                    <p key={i}>{paragraph}</p>
+                                                ))}
+                                            </div>
 
-                                {figures[activeFig].testaments.length > 0 && (
-                                    <div className="fig-testaments">
-                                        <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
-                                        <div className="testaments-grid">
-                                            {figures[activeFig].testaments.map((img, i) => (
-                                                <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
-                                                    <motion.img
-                                                        layoutId={`testament-${img}`}
-                                                        src={img}
-                                                        alt={`وثيقة ${i + 1}`}
-                                                        loading="lazy"
-                                                    />
-                                                    <div className="zoom-overlay"><span>توسيع</span></div>
+                                            <div className="fig-quote-box">
+                                                <p>{fig.highlights}</p>
+                                            </div>
+
+                                            {fig.testaments.length > 0 && (
+                                                <div className="fig-testaments">
+                                                    <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
+                                                    <div className="testaments-grid">
+                                                        {fig.testaments.map((img, i) => (
+                                                            <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
+                                                                <motion.img
+                                                                    layoutId={`testament-${img}`}
+                                                                    src={img}
+                                                                    alt={`وثيقة ${i + 1}`}
+                                                                    loading="lazy"
+                                                                />
+                                                                <div className="zoom-overlay"><span>توسيع</span></div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
-                                            ))}
+                                            )}
                                         </div>
                                     </div>
-                                )}
+                                </div>
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </motion.div>
-
-                {/* Lightbox for testaments */}
-                <AnimatePresence>
-                    {lightboxImg && (
-                        <div className="lightbox" onClick={() => setLightboxImg(null)}>
-                            <motion.div
-                                className="lightbox-backdrop"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                            />
-                            <motion.button
-                                className="close-btn"
-                                onClick={() => setLightboxImg(null)}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                            >×</motion.button>
-                            <motion.img
-                                layoutId={`testament-${lightboxImg}`}
-                                src={lightboxImg}
-                                alt="وثيقة"
-                                className="lightbox-img"
-                            />
-                        </div>
-                    )}
-                </AnimatePresence>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
+
+            {/* Lightbox for testaments */}
+            <AnimatePresence>
+                {lightboxImg && (
+                    <div className="lightbox" onClick={() => setLightboxImg(null)}>
+                        <motion.div
+                            className="lightbox-backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        />
+                        <motion.button
+                            className="close-btn"
+                            onClick={() => setLightboxImg(null)}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >×</motion.button>
+                        <motion.img
+                            layoutId={`testament-${lightboxImg}`}
+                            src={lightboxImg}
+                            alt="وثيقة"
+                            className="lightbox-img"
+                        />
+                    </div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
