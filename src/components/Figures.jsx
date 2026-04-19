@@ -90,28 +90,30 @@ const Figures = () => {
                                                 ))}
                                             </div>
 
-                                            <div className="fig-quote-box">
-                                                <p>{fig.highlights}</p>
-                                            </div>
-
-                                            {fig.testaments.length > 0 && (
-                                                <div className="fig-testaments">
-                                                    <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
-                                                    <div className="testaments-grid">
-                                                        {fig.testaments.map((img, i) => (
-                                                            <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
-                                                                <motion.img
-                                                                    layoutId={`testament-${img}`}
-                                                                    src={img}
-                                                                    alt={`وثيقة ${i + 1}`}
-                                                                    loading="lazy"
-                                                                />
-                                                                <div className="zoom-overlay"><span>توسيع</span></div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
+                                            <div className="details-body-secondary">
+                                                <div className="fig-quote-box">
+                                                    <p>{fig.highlights}</p>
                                                 </div>
-                                            )}
+
+                                                {fig.testaments.length > 0 && (
+                                                    <div className="fig-testaments">
+                                                        <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
+                                                        <div className="testaments-grid">
+                                                            {fig.testaments.map((img, i) => (
+                                                                <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
+                                                                    <motion.img
+                                                                        layoutId={`testament-${img}`}
+                                                                        src={img}
+                                                                        alt={`وثيقة ${i + 1}`}
+                                                                        loading="lazy"
+                                                                    />
+                                                                    <div className="zoom-overlay"><span>توسيع</span></div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
