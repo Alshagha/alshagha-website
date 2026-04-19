@@ -103,6 +103,13 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .history {
+        margin-top: -50px;
+        /* Pull it slightly into the hero gradient or remove margin */
+        padding-top: 50px !important;
+        /* Drastically reduce from 150px/section-padding */
+    }
+
     .timeline-line {
         left: auto;
         right: 20px;
