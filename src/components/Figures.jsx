@@ -43,7 +43,7 @@ const Figures = () => {
     const scrollEnd = `${100 * (figures.length - 1) / figures.length}%`;
 
     // Add "pause" segments to the scroll so the user scrolls down a bit before it pans
-    const x = useTransform(scrollYProgress, [0, 0.15, 0.9, 1], ["0%", "0%", scrollEnd, scrollEnd]);
+    const x = useTransform(scrollYProgress, [0, 0.15, 1.4, 1], ["0%", "0%", scrollEnd, scrollEnd]);
 
     return (
         <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 150}vh` }}>
