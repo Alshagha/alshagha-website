@@ -35,6 +35,7 @@ const Figures = () => {
 
     const { scrollYProgress } = useScroll({
         target: targetRef,
+        offset: ["start start", "end end"]
     });
 
     const scrollEnd = `-${100 * (figures.length - 1) / figures.length}%`;
