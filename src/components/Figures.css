@@ -1,41 +1,56 @@
-.figures-snap-section {
+.figures-h-scroll {
     position: relative;
     background-color: var(--color-bg);
     background-image: radial-gradient(circle at center, rgba(170, 134, 33, 0.05) 0%, transparent 70%);
-    overflow: hidden;
-    /* Prevent horizontal scrollbar on body */
 }
 
-.figures-header-normal {
-    margin-bottom: 2rem;
+.figures-sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.figures-header-absolute {
+    position: absolute;
+    top: max(80px, 10vh);
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .figures-slider-viewport {
+    height: 100%;
     width: 100%;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding-bottom: 2rem;
-    /* Hide scrollbar */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.figures-slider-viewport::-webkit-scrollbar {
-    display: none;
+    align-items: center;
+    padding-top: max(50px, 5vh);
 }
 
 .figures-slider-track {
     display: flex;
-    width: max-content;
+    height: auto;
+    align-items: center;
 }
 
-.figure-snap-card {
-    width: 100vw;
-    padding: 0 1.5rem;
-    scroll-snap-align: center;
+.figure-h-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Card details */
@@ -108,7 +123,6 @@
     margin-bottom: 1rem;
 }
 
-/* The right side of the grid (left logically in RTL) */
 .details-body-secondary {
     display: flex;
     flex-direction: column;
@@ -135,8 +149,9 @@
 
 .testaments-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    /* Three items side by side always */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .testament-thumb {
@@ -191,49 +206,6 @@
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-/* Slider Controls */
-.figures-slider-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.slider-nav-btn {
-    background: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.slider-nav-btn:hover {
-    background: var(--color-primary);
-    color: #fff;
-    transform: scale(1.1);
-}
-
-.slider-indicator-dots {
-    display: flex;
-    gap: 0.6rem;
-}
-
-.slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(170, 134, 33, 0.3);
-    transition: background-color 0.3s ease;
 }
 
 /* Lightbox styles */
