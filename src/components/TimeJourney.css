@@ -1,0 +1,93 @@
+.time-journey {
+    position: relative;
+    height: 400vh;
+    /* Determines how much scroll creates the horizontal movement */
+    background-color: var(--color-bg);
+}
+
+.time-journey-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.time-journey-track {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: max-content;
+    padding: 0 5vw;
+}
+
+.track-separator {
+    width: 20vw;
+    /* Space between History and Tree */
+    height: 100%;
+}
+
+/* Caravan styling */
+.caravan-container {
+    position: absolute;
+    bottom: 5vh;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.ground-line {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.3;
+}
+
+.animated-caravan {
+    position: absolute;
+    bottom: 20px;
+    /* Align wheels with ground line */
+    width: 150px;
+    transform-origin: bottom center;
+}
+
+.animated-caravan img {
+    width: 100%;
+    height: auto;
+    filter: sepia(0.6) hue-rotate(-15deg) contrast(1.2);
+    /* Enhance the heritage look */
+    mix-blend-mode: multiply;
+}
+
+/* Base modifications for components inside the track */
+.time-journey-track .history {
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+}
+
+.time-journey-track .tree {
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+}
+
+/* Hide standard scrollbars for clean track */
+.time-journey-track::-webkit-scrollbar {
+    display: none;
+}
