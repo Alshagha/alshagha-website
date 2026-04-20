@@ -39,6 +39,16 @@ const Council = () => {
                         </ul>
                     </motion.div>
 
+                    {/* Site Committee */}
+                    <motion.div className="council-box members glass-panel" variants={fadeInUp} style={{ marginTop: '2rem' }}>
+                        <h3>اللجنة التشغيلية للموقع</h3>
+                        <ul>
+                            <li>رائد بن عبدالله ابن علي الشقحاء</li>
+                            <li>مشعل بن محمد ابن علي الشقحاء</li>
+                            <li>صالح بن عبدالعزيز ابن فهد الشقحاء</li>
+                        </ul>
+                    </motion.div>
+
                     {/* Committees & Goals */}
                     <div className="council-grid">
                         <motion.div className="council-box glass-panel" variants={fadeInUp}>
