@@ -291,68 +291,86 @@
 
 /* Robust Mobile Fixes */
 @media (max-width: 992px) {
-    .figures-sticky-container {
-        position: relative;
-        height: auto;
-    }
-
-    .figures-slider-viewport {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 2rem;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .figures-slider-viewport::-webkit-scrollbar {
-        display: none;
-    }
-
-    .figure-h-card-wrapper {
-        scroll-snap-align: center;
-        width: 100vw;
-    }
-
     .details-body {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 0.8rem;
     }
 
     .figure-details-pane {
-        padding: 1.5rem;
-        max-height: none;
-        /* Fully expand to content height naturally! */
-        overflow-y: visible;
-        /* Prevent any inner scrollbars */
-        width: 92%;
+        padding: 1.2rem;
+        width: 95%;
         margin: 0 auto;
     }
 
     .details-header {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .details-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-    }
-
-    .details-title h3 {
+        width: 50px;
+        height: 50px;
         font-size: 1.5rem;
     }
 
+    .details-title h3 {
+        font-size: 1.2rem;
+    }
+
+    .born-badge {
+        font-size: 0.8rem;
+        padding: 0.2rem 1rem;
+        margin-top: 0.2rem;
+    }
+
+    .fig-desc-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .fig-desc-text p {
+        margin-bottom: 0.5rem;
+    }
+
+    .details-body-secondary {
+        gap: 0.8rem;
+    }
+
+    .fig-quote-box {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
     .figures-header-absolute {
-        padding-top: max(20px, 2vh);
+        padding-top: max(15px, 2vh);
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    .testament-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
 
     .testaments-grid {
-        /* Even on mobile, keep them nicely together */
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        gap: 0.4rem;
+        max-height: 80px;
+        /* Highly compressed for mobile viewport */
+    }
+
+    .testament-thumb {
+        height: 70px;
+        border-width: 1px;
     }
 }
