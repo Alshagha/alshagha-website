@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { fadeInUp } from '../utils/animations';
 import './Figures.css';
@@ -33,6 +33,17 @@ const Figures = () => {
         }
     ];
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 992);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const { scrollYProgress } = useScroll({
         target: targetRef,
         offset: ["start start", "end end"]
@@ -45,8 +56,10 @@ const Figures = () => {
     // Add "pause" segments to the scroll so the user scrolls down a bit before it pans
     const x = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], ["0vw", "0vw", scrollEnd, scrollEnd]);
 
+    const sectionHeight = isMobile ? 'auto' : `${figures.length * 150}vh`;
+
     return (
-        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 150}vh` }}>
+        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: sectionHeight }}>
             <div className="figures-sticky-container">
                 <div className="figures-header-absolute">
                     <div className="container">
@@ -74,7 +87,7 @@ const Figures = () => {
                 <div className="figures-slider-viewport">
                     <motion.div
                         className="figures-slider-track"
-                        style={{ x, width: `${figures.length * 100}vw` }}
+                        style={isMobile ? {} : { x, width: `${figures.length * 100}vw` }}
                     >
                         {figures.map((fig, idx) => (
                             <div key={idx} className="figure-h-card-wrapper" style={{ width: '100vw' }}>

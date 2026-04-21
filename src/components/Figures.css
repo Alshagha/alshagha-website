@@ -291,6 +291,28 @@
 
 /* Robust Mobile Fixes */
 @media (max-width: 992px) {
+    .figures-sticky-container {
+        position: relative;
+        height: auto;
+    }
+
+    .figures-slider-viewport {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .figures-slider-viewport::-webkit-scrollbar {
+        display: none;
+    }
+
+    .figure-h-card-wrapper {
+        scroll-snap-align: center;
+        width: 100vw;
+    }
+
     .details-body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -298,7 +320,10 @@
 
     .figure-details-pane {
         padding: 1.5rem;
-        max-height: 75vh;
+        max-height: none;
+        /* Fully expand to content height naturally! */
+        overflow-y: visible;
+        /* Prevent any inner scrollbars */
         width: 92%;
         margin: 0 auto;
     }
