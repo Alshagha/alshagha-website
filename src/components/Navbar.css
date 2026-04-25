@@ -104,6 +104,10 @@
     width: 100%;
 }
 
+.mobile-menu-logo {
+    display: none;
+}
+
 .menu-toggle {
     display: none;
     background: transparent;
@@ -211,6 +215,17 @@
     .navbar-links a {
         font-size: 1.4rem;
         font-weight: 700;
+    }
+
+    .mobile-menu-logo {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    .menu-logo {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
     }
 
     .navbar-caravan {

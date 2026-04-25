@@ -42,6 +42,9 @@ const Navbar = ({ scrolled }) => {
                     initial={isMobile ? "initial" : "animate"}
                     animate={!isMobile || menuOpen ? "animate" : "initial"}
                 >
+                    <motion.li variants={fadeInUp} className="mobile-menu-logo">
+                        <img src="/images/logo.png" alt="آل شقحاء" className="menu-logo" />
+                    </motion.li>
                     <motion.li variants={fadeInUp}><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></motion.li>
                     <motion.li variants={fadeInUp}><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></motion.li>
                     <motion.li variants={fadeInUp}><a href="#tree" onClick={() => setMenuOpen(false)}>شجرة الأسرة</a></motion.li>
