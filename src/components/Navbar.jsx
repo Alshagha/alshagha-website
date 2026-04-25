@@ -20,7 +20,7 @@ const Navbar = ({ scrolled }) => {
         <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
             <div className="navbar-container container">
                 <a href="#" className={`navbar-brand ${menuOpen ? 'hidden' : ''}`}>
-                    <span className="brand-gold">أسرة</span> الشقحاء
+                    <img src="/images/logo.png" alt="آل شقحاء" className="navbar-logo" />
                 </a>
 
                 <div className={`navbar-caravan ${menuOpen ? 'hidden' : ''}`}>

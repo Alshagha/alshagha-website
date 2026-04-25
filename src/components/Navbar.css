@@ -28,13 +28,19 @@
 
 .navbar-brand {
     justify-self: flex-start;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--color-text);
+    display: flex;
+    align-items: center;
 }
 
-.brand-gold {
-    color: var(--color-primary);
+.navbar-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.navbar-scrolled .navbar-logo {
+    height: 45px;
 }
 
 .navbar-caravan {
@@ -165,9 +171,11 @@
 
     .navbar-brand {
         justify-self: flex-start;
-        font-size: 1.1rem;
-        white-space: nowrap;
         z-index: 2;
+    }
+
+    .navbar-logo {
+        height: 40px;
     }
 
     .menu-toggle {
@@ -232,8 +240,8 @@
         padding: 0 0.8rem;
     }
 
-    .navbar-brand {
-        font-size: 0.95rem;
+    .navbar-logo {
+        height: 35px;
     }
 
     .navbar-caravan {
