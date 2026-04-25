@@ -20,7 +20,7 @@ const Navbar = ({ scrolled }) => {
         <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
             <div className="navbar-container container">
                 <a href="#" className={`navbar-brand ${menuOpen ? 'hidden' : ''}`}>
-                    <img src="/images/logo.png" alt="آل شقحاء" className="navbar-logo" />
+                    <img src="/images/logo.png" alt="آل شقحاء" className="navbar-logo" loading="eager" />
                 </a>
 
                 <div className={`navbar-caravan ${menuOpen ? 'hidden' : ''}`}>
@@ -43,7 +43,7 @@ const Navbar = ({ scrolled }) => {
                     animate={!isMobile || menuOpen ? "animate" : "initial"}
                 >
                     <motion.li variants={fadeInUp} className="mobile-menu-logo">
-                        <img src="/images/logo.png" alt="آل شقحاء" className="menu-logo" />
+                        <img src="/images/logo.png" alt="آل شقحاء" className="menu-logo" loading="eager" />
                     </motion.li>
                     <motion.li variants={fadeInUp}><a href="#history" onClick={() => setMenuOpen(false)}>تاريخ الأسرة</a></motion.li>
                     <motion.li variants={fadeInUp}><a href="#figures" onClick={() => setMenuOpen(false)}>أعلام الأسرة</a></motion.li>

@@ -33,14 +33,15 @@
 }
 
 .navbar-logo {
-    height: 200px;
+    height: 100px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .navbar-scrolled .navbar-logo {
-    height: 80px;
+    height: 60px;
 }
 
 .navbar-caravan {
@@ -179,7 +180,7 @@
     }
 
     .navbar-logo {
-        height: 85px;
+        height: 60px;
     }
 
     .menu-toggle {
@@ -223,9 +224,10 @@
     }
 
     .menu-logo {
-        height: 120px;
+        height: 150px;
         width: auto;
         object-fit: contain;
+        image-rendering: -webkit-optimize-contrast;
     }
 
     .navbar-caravan {
@@ -256,7 +258,7 @@
     }
 
     .navbar-logo {
-        height: 65px;
+        height: 50px;
     }
 
     .navbar-caravan {
