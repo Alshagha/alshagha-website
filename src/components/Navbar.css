@@ -33,14 +33,14 @@
 }
 
 .navbar-logo {
-    height: 160px;
+    height: 200px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
 }
 
 .navbar-scrolled .navbar-logo {
-    height: 60px;
+    height: 80px;
 }
 
 .navbar-caravan {
