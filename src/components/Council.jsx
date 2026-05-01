@@ -22,7 +22,7 @@ const Council = () => {
                     {/* President */}
                     <motion.div className="council-box president" variants={fadeInUp}>
                         <h3>رئيس المجلس</h3>
-                        <p>الشيخ:عبدالرحمن علي الشقحاء</p>
+                        <p>الشيخ:عبدالرحمن بن علي بن فهدالشقحاء</p>
                     </motion.div>
 
                     <div className="connector"></div>
@@ -31,11 +31,11 @@ const Council = () => {
                     <motion.div className="council-box members glass-panel" variants={fadeInUp}>
                         <h3>أعضاء المجلس</h3>
                         <ul>
-                            <li>أ.حسين بن تركي الشقحاء</li>
-                            <li>م.رائد بن عبدالله الشقحاء</li>
-                            <li>أ.طارق بن عبدالرحمن الشقحاء</li>
-                            <li>د.منصور بن عبدالوهاب الشقحاء</li>
-                            <li>أ.صالح بن عبدالعزيز الشقحاء</li>
+                            <li>أ.حسين بن تركي بن حسين الشقحاء</li>
+                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
+                            <li>أ.طارق بن عبدالرحمن بن منصور الشقحاء</li>
+                            <li>د.منصور بن عبدالوهاب  بن منصور الشقحاء</li>
+                            <li>أ.صالح بن عبدالعزيز بن فهد الشقحاء</li>
                         </ul>
                     </motion.div>
 
