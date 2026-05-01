@@ -22,7 +22,7 @@ const Council = () => {
                     {/* President */}
                     <motion.div className="council-box president" variants={fadeInUp}>
                         <h3>رئيس المجلس</h3>
-                        <p>عبدالرحمن علي الشقحاء</p>
+                        <p>الشيخ:عبدالرحمن علي الشقحاء</p>
                     </motion.div>
 
                     <div className="connector"></div>
@@ -31,11 +31,11 @@ const Council = () => {
                     <motion.div className="council-box members glass-panel" variants={fadeInUp}>
                         <h3>أعضاء المجلس</h3>
                         <ul>
-                            <li>حسين بن تركي الشقحاء</li>
-                            <li>رائد بن عبدالله الشقحاء</li>
-                            <li>طارق بن عبدالرحمن الشقحاء</li>
-                            <li>منصور بن عبدالوهاب الشقحاء</li>
-                            <li>صالح بن عبدالعزيز الشقحاء</li>
+                            <li>أ.حسين بن تركي الشقحاء</li>
+                            <li>م.رائد بن عبدالله الشقحاء</li>
+                            <li>أ.طارق بن عبدالرحمن الشقحاء</li>
+                            <li>د.منصور بن عبدالوهاب الشقحاء</li>
+                            <li>أ.صالح بن عبدالعزيز الشقحاء</li>
                         </ul>
                     </motion.div>
 
@@ -43,9 +43,9 @@ const Council = () => {
                     <motion.div className="council-box members glass-panel" variants={fadeInUp} style={{ marginTop: '2rem' }}>
                         <h3>اللجنة التشغيلية للموقع</h3>
                         <ul>
-                            <li>مشعل بن محمد ابن علي الشقحاء</li>
-                            <li>رائد بن عبدالله ابن علي الشقحاء</li>
-                            <li>صالح بن عبدالعزيز ابن فهد الشقحاء</li>
+                            <li>م.مشعل بن محمد بن علي الشقحاء</li>
+                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
+                            <li>أ.صالح بن عبدالعزيز بن فهد الشقحاء</li>
                         </ul>
                     </motion.div>
 

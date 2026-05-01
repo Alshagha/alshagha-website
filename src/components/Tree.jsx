@@ -44,6 +44,7 @@ const Tree = () => {
                         <motion.div className="branch" variants={fadeInUp}>
                             <h4>فرع ناصر</h4>
                             <p>ابن منصور بن محمد ابن حمود</p>
+                            <p>(منقطع)</p>
                         </motion.div>
                     </motion.div>
 
