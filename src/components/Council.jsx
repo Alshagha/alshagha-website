@@ -22,7 +22,7 @@ const Council = () => {
                     {/* President */}
                     <motion.div className="council-box president" variants={fadeInUp}>
                         <h3>رئيس المجلس</h3>
-                        <p>الشيخ:عبدالرحمن بن علي بن فهدالشقحاء</p>
+                        <p>الشيخ:عبدالرحمن بن علي بن فهد الشقحاء</p>
                     </motion.div>
 
                     <div className="connector"></div>
