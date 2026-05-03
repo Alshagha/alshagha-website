@@ -65,18 +65,20 @@ const Council = () => {
                                     <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
                                         ( معنية بإدارة والإشراف على اجتماعات الأسرة )
                                     </p>
-
                                 </li>
-
-                                <div className="goal-item">
-                                    <span className="goal-num">١</span>
-                                    <div className="goal-text">
-                                        <h4>رؤية الأسرة</h4>
-                                        <p>أن تكون أسرتنا نموذجًا يُحتذى به في التماسك والترابط وصلة الرحم، قائمًا على القيم الأصيلة، ومسهمًا بفاعلية في بناء مجتمع حيوي وفق رؤية ٢٠٣٠.</p>
-                                    </div>
-                                </div>
-
                             </ul>
+
+                            <div className="vision-container">
+                                <div className="vision-header">
+                                    <span className="vision-num">١</span>
+                                    <h4>رؤية الأسرة</h4>
+                                </div>
+                                <p className="vision-text">
+                                    أن تكون أسرتنا نموذجًا يُحتذى به في التماسك والترابط وصلة الرحم،
+                                    <br />
+                                    قائمًا على القيم الأصيلة، ومسهمًا بفاعلية في بناء مجتمع حيوي وفق رؤية ٢٠٣٠.
+                                </p>
+                            </div>
 
                         </motion.div>
 
