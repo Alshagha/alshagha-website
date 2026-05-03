@@ -57,13 +57,13 @@ const Council = () => {
                                 <li>
                                     <strong style={{ color: 'var(--color-text)', fontSize: '1.1rem' }}>اللجنة التنفيذية</strong>
                                     <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
-                                        ( معنية بالإشراف على تنفيذ مواقع التواصل الإجتماعي للأسرة، وتحديث الشجرة، وإعداد البيانات والرسائل الاعلامية )
+                                        معنية بالإشراف على تنفيذ مواقع التواصل الإجتماعي للأسرة، وتحديث الشجرة، وإعداد البيانات والرسائل الاعلامية
                                     </p>
                                 </li>
                                 <li>
                                     <strong style={{ color: 'var(--color-text)', fontSize: '1.1rem' }}>لجنة إدارة إجتماعات الأسرة</strong>
                                     <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginTop: '0.5rem', lineHeight: '1.5' }}>
-                                        ( معنية بإدارة والإشراف على اجتماعات الأسرة )
+                                        معنية بإدارة والإشراف على اجتماعات الأسرة
                                     </p>
                                 </li>
                             </ul>

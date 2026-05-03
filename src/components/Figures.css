@@ -293,8 +293,77 @@
     color: var(--color-primary);
 }
 
+/* --- Mobile Tabs UI --- */
+.figures-mobile-view {
+    display: none;
+}
+
+.figures-desktop-view {
+    display: block;
+}
+
+.figures-tabs-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.figures-tabs-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.figures-tabs-scroll {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.figure-tab-btn {
+    background: rgba(170, 134, 33, 0.05);
+    color: var(--color-text-muted);
+    border: 1px solid rgba(170, 134, 33, 0.2);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.figure-tab-btn.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    box-shadow: 0 5px 15px rgba(170, 134, 33, 0.3);
+    border-color: var(--color-primary);
+}
+
+.figures-mobile-content {
+    padding: 0 1rem;
+}
+
+.mobile-pane-override {
+    max-height: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem !important;
+}
+
 /* Robust Mobile Fixes */
 @media (max-width: 992px) {
+    .figures-desktop-view {
+        display: none !important;
+    }
+
+    .figures-mobile-view {
+        display: block !important;
+    }
+
     .details-body {
         grid-template-columns: 1fr;
         gap: 0.8rem;
@@ -349,8 +418,35 @@
         line-height: 1.4;
     }
 
+    .figures-h-scroll {
+        height: auto !important;
+        padding-bottom: 3rem;
+    }
+
+    .figures-sticky-container {
+        position: static;
+        height: auto;
+    }
+
+    .figures-slider-viewport {
+        display: block;
+    }
+
+    .figures-slider-track {
+        transform: none !important;
+        width: 100% !important;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .figure-h-card-wrapper {
+        width: 100% !important;
+    }
+
     .figures-header-absolute {
-        padding-top: max(15px, 2vh);
+        position: static;
+        padding-top: max(30px, 4vh);
+        margin-bottom: 2rem;
     }
 
     .section-title {
