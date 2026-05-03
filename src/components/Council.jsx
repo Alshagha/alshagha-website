@@ -32,10 +32,10 @@ const Council = () => {
                         <h3>أعضاء المجلس</h3>
                         <ul>
                             <li>أ.حسين بن تركي بن حسين الشقحاء</li>
-                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
-                            <li>أ.طارق بن عبدالرحمن بن منصور الشقحاء</li>
-                            <li>د.منصور بن عبدالوهاب  بن منصور الشقحاء</li>
                             <li>أ.صالح بن عبدالعزيز بن فهد الشقحاء</li>
+                            <li>د.منصور بن عبدالوهاب  بن منصور الشقحاء</li>
+                            <li>أ.طارق بن عبدالرحمن بن منصور الشقحاء</li>
+                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
                         </ul>
                     </motion.div>
 
@@ -43,9 +43,9 @@ const Council = () => {
                     <motion.div className="council-box members glass-panel" variants={fadeInUp} style={{ marginTop: '2rem' }}>
                         <h3>اللجنة التنفيذية</h3>
                         <ul>
-                            <li>م.مشعل بن محمد بن علي الشقحاء</li>
-                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
                             <li>أ.صالح بن عبدالعزيز بن فهد الشقحاء</li>
+                            <li>م.رائد بن عبدالله بن علي الشقحاء</li>
+                            <li>م.مشعل بن محمد بن علي الشقحاء</li>
                         </ul>
                     </motion.div>
 
@@ -73,6 +73,13 @@ const Council = () => {
 
                         <motion.div className="council-box glass-panel goals" variants={fadeInUp}>
                             <h3 className="gold-text">أهداف المجلس</h3>
+                            <div className="goal-item">
+                                <span className="goal-num">١</span>
+                                <div className="goal-text">
+                                    <h4>رؤية الأسرة</h4>
+                                    <p>أن تكون أسرتنا نموذجًا يُحتذى به في التماسك والترابط وصلة الرحم، قائمًا على القيم الأصيلة، ومسهمًا بفاعلية في بناء مجتمع حيوي وفق رؤية ٢٠٣٠.</p>
+                                </div>
+                            </div>
                             <div className="goal-item">
                                 <span className="goal-num">١</span>
                                 <div className="goal-text">
