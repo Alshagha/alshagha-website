@@ -300,6 +300,7 @@
 
 .figures-desktop-view {
     display: block;
+    height: 100%;
 }
 
 .figures-tabs-container {
