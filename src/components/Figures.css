@@ -105,6 +105,10 @@
     align-items: start;
 }
 
+.details-body.single-column {
+    grid-template-columns: 1fr;
+}
+
 .details-icon {
     font-size: 2.5rem;
     color: var(--color-primary);
