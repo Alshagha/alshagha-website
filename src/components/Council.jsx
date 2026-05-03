@@ -67,19 +67,21 @@ const Council = () => {
                                     </p>
 
                                 </li>
+
+                                <div className="goal-item">
+                                    <span className="goal-num">١</span>
+                                    <div className="goal-text">
+                                        <h4>رؤية الأسرة</h4>
+                                        <p>أن تكون أسرتنا نموذجًا يُحتذى به في التماسك والترابط وصلة الرحم، قائمًا على القيم الأصيلة، ومسهمًا بفاعلية في بناء مجتمع حيوي وفق رؤية ٢٠٣٠.</p>
+                                    </div>
+                                </div>
+
                             </ul>
 
                         </motion.div>
 
                         <motion.div className="council-box glass-panel goals" variants={fadeInUp}>
                             <h3 className="gold-text">أهداف المجلس</h3>
-                            <div className="goal-item">
-                                <span className="goal-num">١</span>
-                                <div className="goal-text">
-                                    <h4>رؤية الأسرة</h4>
-                                    <p>أن تكون أسرتنا نموذجًا يُحتذى به في التماسك والترابط وصلة الرحم، قائمًا على القيم الأصيلة، ومسهمًا بفاعلية في بناء مجتمع حيوي وفق رؤية ٢٠٣٠.</p>
-                                </div>
-                            </div>
                             <div className="goal-item">
                                 <span className="goal-num">١</span>
                                 <div className="goal-text">
