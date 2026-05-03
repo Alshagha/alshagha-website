@@ -68,11 +68,32 @@ const History = () => {
                         <div className="timeline-content glass-panel">
                             <h3 className="card-title">استقرار الأسرة </h3>
                             <p className="card-text">
-                                استقر الجد الشيخ منصور بن محمد ابن حمود في مدينة عنيزة. وقد تُوفي الجد منصور في عنيزة. وقد خلف ثلاثة أبناء هم: محمدو صالح (لهما ذرية)،
-                                رحمهم الله جميعاً (منقطع) وناصر.
+                                استقر الجد الشيخ منصور بن محمد ابن حمود في مدينة عنيزة. وقد تُوفي الجد منصور في عنيزة. وقد خلف ثلاثة أبناء هم: محمدو صالح (لهما ذرية)، وناصر (منقطع)،
+                                رحمهم الله جميعاً.
                             </p>
                         </div>
                     </motion.div>
+
+                    {/* Item 4 */}
+                    <motion.div
+                        className="timeline-item right"
+                        variants={slideInRight}
+                        initial="initial"
+                        whileInView="whileInView"
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
+                        <div className="timeline-icon">
+                            <FaHome />
+                        </div>
+                        <div className="timeline-content glass-panel">
+                            <h3 className="card-title">استقرار الأسرة </h3>
+                            <p className="card-text">
+                                استقر الجد الشيخ منصور بن محمد ابن حمود في مدينة عنيزة. وقد تُوفي الجد منصور في عنيزة. وقد خلف ثلاثة أبناء هم: محمدو صالح (لهما ذرية)، وناصر (منقطع)،
+                                رحمهم الله جميعاً.
+                            </p>
+                        </div>
+                    </motion.div>
+
                 </div>
 
 
