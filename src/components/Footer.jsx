@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaXTwitter, FaInstagram } from 'react-icons/fa6';
+import { FaXTwitter, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import './Footer.css';
 
@@ -31,6 +31,8 @@ const Footer = () => {
                         <div className="social-icons">
                             <a href="https://x.com/alshaqha_family?s=21" target="_blank" rel="noreferrer" aria-label="Twitter"><FaXTwitter /></a>
                             <a href="https://www.instagram.com/alshaqha_family?igsh=OHdsZTN2YThudGls" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+                            <a href="https://www.tiktok.com/@alshaqha_family?_r=1&_t=ZS-96SS2cgz8Qk" target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok /></a>
+                            <a href="https://youtube.com/@alshaqha.family?si=P1Y-FFlNET9FpEjM" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a>
                             <a href="mailto:alshaqha.family@gmail.com" aria-label="Email"><MdEmail /></a>
                         </div>
                     </div>
