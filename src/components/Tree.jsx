@@ -63,10 +63,10 @@ const Tree = () => {
                         whileInView="animate"
                         viewport={{ once: true }}
                     >
-                        <a href="/images/family_tree.pdf" target="_blank" rel="noreferrer" className="btn tree-btn">
+                        <a href="/images/family_tree.jpg" target="_blank" rel="noreferrer" className="btn tree-btn">
                             <FaSearchPlus style={{ fontSize: '1.2rem' }} /> عرض الشجرة
                         </a>
-                        <a href="/images/family_tree.pdf" download="شجرة_عائلة_الشقحاء.pdf" className="btn tree-btn">
+                        <a href="/images/family_tree.jpg" download="شجرة_عائلة_الشقحاء.jpg" className="btn tree-btn">
                             <FaDownload style={{ fontSize: '1.2rem' }} /> تنزيل الشجرة
                         </a>
                     </motion.div>
