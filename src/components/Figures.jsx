@@ -36,7 +36,7 @@ const Figures = () => {
                 '/images/mansour_doc_3.jpeg',
                 '/images/mansour_doc_4.jpeg'
             ],
-            testamentsTitle: ":الوثائق التاريخية العائدة للامير و القائد"
+            testamentsTitle: "الوثائق التاريخية العائدة للامير و القائد:"
         },
         {
             name: "الأمير منصور بن محمد بن منصور بن صالح الشقحاء",
