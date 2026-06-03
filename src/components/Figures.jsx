@@ -130,7 +130,7 @@ const Figures = () => {
                                                                                 layoutId={`testament-${img}`}
                                                                                 src={img}
                                                                                 alt={`وثيقة ${i + 1}`}
-                                                                                loading="lazy"
+                                                                                loading="eager"
                                                                             />
                                                                             <div className="zoom-overlay"><span>توسيع</span></div>
                                                                         </div>
@@ -229,7 +229,7 @@ const Figures = () => {
                                                                     layoutId={`testament-${img}`}
                                                                     src={img}
                                                                     alt={`وثيقة ${i + 1}`}
-                                                                    loading="lazy"
+                                                                    loading="eager"
                                                                 />
                                                                 <div className="zoom-overlay"><span>توسيع</span></div>
                                                             </div>
