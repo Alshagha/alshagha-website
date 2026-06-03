@@ -30,7 +30,13 @@ const Figures = () => {
             desc: "نشأ في كنف والديه حتى كبر. اشتغل بالتجارة، وسافر مع الحملات التي تسمى العقيلات إلى الأردن والشام، ثم التحق بالجيش الفرنسي هناك، وتعلم كثيرًا من الفنون العسكرية ومنها المدفعية والرماية على اختلاف أنواعها. \n\nفي عام ١٣٤٩هـ عاد إلى المملكة، والتحق بالسلك العسكري في مدينة جدة. كان يعد من الرجال الأقوياء، ويتميز بالشجاعة والخبرة.",
             highlights: "عندما علم الملك عبدالعزيز رحمه الله بسعة خبرته العسكرية كلفه ببعض المهام العسكرية. ثم كُلف بإمارة مدينة الوجه. وتنقل بين عدد من المراكز العسكرية في جنوب المملكة، ثم عُين أميرًا وقائدًا عسكريًا لمنطقة جازان، ثم أبها، ثم الحدود الشمالية، وأخيرًا قائدًا عسكريًا لمنطقة حائل. استمر مزاولًا للعمل العسكري بإخلاص حتى توفي وهو على رأس العمل عام ١٣٧١هـ مخلفًا سمعة حسنة.",
             icon: <GiCrossedSwords />,
-            testaments: []
+            testaments: [
+                '/images/mansour_doc_1.jpeg',
+                '/images/mansour_doc_2.jpeg',
+                '/images/mansour_doc_3.jpeg',
+                '/images/mansour_doc_4.jpeg'
+            ],
+            testamentsTitle: "الوثائق التاريخية العائدة للامير و القائد"
         },
         {
             name: "الأمير منصور بن محمد بن منصور بن صالح الشقحاء",
@@ -116,7 +122,7 @@ const Figures = () => {
 
                                                         {fig.testaments && fig.testaments.length > 0 && (
                                                             <div className="fig-testaments">
-                                                                <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
+                                                                <h4 className="testament-title">{fig.testamentsTitle || "الوصايا والمخطوطات العائدة للشيخ:"}</h4>
                                                                 <div className="testaments-grid">
                                                                     {fig.testaments.map((img, i) => (
                                                                         <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
@@ -215,7 +221,7 @@ const Figures = () => {
 
                                             {figures[activeTab].testaments && figures[activeTab].testaments.length > 0 && (
                                                 <div className="fig-testaments">
-                                                    <h4 className="testament-title">الوصايا والمخطوطات العائدة للشيخ:</h4>
+                                                    <h4 className="testament-title">{figures[activeTab].testamentsTitle || "الوصايا والمخطوطات العائدة للشيخ:"}</h4>
                                                     <div className="testaments-grid">
                                                         {figures[activeTab].testaments.map((img, i) => (
                                                             <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>

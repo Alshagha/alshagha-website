@@ -178,11 +178,9 @@
 
 .testaments-grid {
     display: grid;
-    /* Three items side by side always */
-    grid-template-columns: repeat(3, 1fr);
+    /* Dynamically adjust column count to fit elements cleanly */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
-    max-height: 200px;
-    /* Safe upper limit */
 }
 
 .testament-thumb {
@@ -464,10 +462,8 @@
     }
 
     .testaments-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
         gap: 0.4rem;
-        max-height: 80px;
-        /* Highly compressed for mobile viewport */
     }
 
     .testament-thumb {
