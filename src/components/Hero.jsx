@@ -40,7 +40,7 @@ const Hero = () => {
                 </motion.p>
                 <motion.div variants={fadeInUp}>
                     <MagneticButton strength={0.2}>
-                        <a href="#history" className="hero-btn">اكتشف تاريخنا</a>
+                        <a href="#history" className="hero-btn">اطلع على تاريخ الأسرة</a>
                     </MagneticButton>
                 </motion.div>
             </motion.div>

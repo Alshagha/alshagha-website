@@ -21,6 +21,7 @@ const FamilyPlatform = () => {
                         <motion.h3 variants={fadeInUp} className="platform-subtitle">شجرة العائلة والتوثيق الرقمي</motion.h3>
                         <motion.p variants={fadeInUp} className="platform-description">
                             وثقنا ماضينا لنبني مستقبلنا. منصة الشقحاء الرقمية هي بوابتكم للاطلاع على شجرة العائلة الممتدة والتواصل مع جميع أفراد الأسرة عبر التاريخ.
+                            <br className="desktop-only" />
                             منصة متكاملة تجمع تراثنا في متناول يديك.
                         </motion.p>
 
