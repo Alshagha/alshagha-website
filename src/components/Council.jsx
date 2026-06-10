@@ -7,7 +7,7 @@ const Council = () => {
     return (
         <section className="council section-padding" id="council">
             <div className="container">
-                <h2 className="section-title text-center">مجلس أسرة الشقحاء</h2>
+                <h2 className="section-title text-center">مجلس إدارة أسرة الشقحاء</h2>
                 <p className="section-subtitle text-center">
                     تم تشكيل مجلس الأسرة لتنظيم وهيكلة أعمال الأسرة تحت شعار الاستدامة والحوكمة
                 </p>
@@ -22,7 +22,7 @@ const Council = () => {
                     {/* President */}
                     <motion.div className="council-box president" variants={fadeInUp}>
                         <h3>رئيس المجلس</h3>
-                        <p>الشيخ:عبدالرحمن بن علي بن فهد الشقحاء</p>
+                        <p>الشيخ: عبدالرحمن بن علي بن فهد الشقحاء</p>
                     </motion.div>
 
                     <div className="connector"></div>
