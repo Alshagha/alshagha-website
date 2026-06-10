@@ -229,6 +229,7 @@
 }
 
 .fig-quote-box {
+    margin-top: 1.5rem;
     background: rgba(170, 134, 33, 0.05);
     padding: 1.5rem;
     border-right: 4px solid var(--color-primary);
@@ -539,5 +540,17 @@
     .testament-thumb {
         height: 70px;
         border-width: 1px;
+    }
+}
+
+@media (min-width: 993px) {
+    .testaments-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+    }
+
+    .testament-thumb {
+        height: 220px;
+        border-radius: 12px;
     }
 }
