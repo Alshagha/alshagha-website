@@ -19,14 +19,22 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
-    const lenis = new Lenis();
+    // Initialize Lenis for smooth scrolling only on desktop (non-mobile & non-touch)
+    const isMobile = window.matchMedia('(max-width: 992px)').matches;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    let lenis;
+    let animationFrameId;
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    if (!isMobile && !isTouchDevice) {
+      lenis = new Lenis();
+
+      function raf(time) {
+        lenis.raf(time);
+        animationFrameId = requestAnimationFrame(raf);
+      }
+      animationFrameId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -35,7 +43,12 @@ function App() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      lenis.destroy();
+      if (lenis) {
+        lenis.destroy();
+      }
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, []);
 
