@@ -45,107 +45,115 @@ const Figures = () => {
             desc: "ولد الأمير منصور بن محمد في مدينة بريدة في القصيم سنة ١٣٢٩هـ، وكان في بداية حياته يعمل بالتجارة وسافر مع حملات العقيلات، واستقر مدة من الزمن في بلاد الشام، والتحق بالجيش الفرنسي، وبعد ذلك عاد إلى الوطن والتحق بالسلك العسكري في مدينة جدة، ثم انتقل إلى شرطة رجال ألمع، ثم إلى إمارة بيش، ثم إمارة القحمة، التابعتين لمنطقة جازان، ثم عين أميرًا على مركز الشعبين (رجال ألمع)، وتوفي في جازان سنة ١٣٦٨هـ رحمه اللّٰه .",
             highlights: "",
             icon: <GiCrown />,
-            testaments: []
+            testaments: [
+                '/images/Image (17).jpeg',
+                '/images/Image (18).jpeg'
+            ],
+            testamentsTitle: "الوثائق والقرارات التاريخية العائدة للأمير:"
         }
     ];
 
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start start", "end end"]
-    });
-
-    // In RTL layout, the next flex items are rendered to the left.
-    // To bring them into view natively and perfectly, we translate exactly [N-1] viewport widths (vw) to the RIGHT (positive).
-    const scrollEnd = `${100 * (figures.length - 1)}vw`;
-
-    // Add "pause" segments to the scroll so the user scrolls down a bit before it pans
-    const x = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], ["0vw", "0vw", scrollEnd, scrollEnd]);
-
     return (
-        <section ref={targetRef} className="figures-h-scroll" id="figures" style={{ height: `${figures.length * 150}vh` }}>
+        <section className="figures-h-scroll" id="figures">
             <div className="figures-desktop-view">
-                <div className="figures-sticky-container">
-                    <div className="figures-header-absolute">
-                        <div className="container">
-                            <motion.h2
-                                variants={fadeInUp}
-                                initial="initial"
-                                whileInView="animate"
-                                viewport={{ once: true }}
-                                className="section-title text-center"
-                            >
-                                أعلام الأسرة والشخصيات البارزة
-                            </motion.h2>
-                            <motion.p
-                                variants={fadeInUp}
-                                initial="initial"
-                                whileInView="animate"
-                                viewport={{ once: true }}
-                                className="section-subtitle text-center"
-                            >
-                                رحلة عبر الزمن مع قامات أرست دعائم الأسرة
-                            </motion.p>
-                        </div>
+                <div className="container">
+                    <div className="figures-desktop-header">
+                        <motion.h2
+                            variants={fadeInUp}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            className="section-title text-center"
+                        >
+                            أعلام الأسرة والشخصيات البارزة
+                        </motion.h2>
+                        <motion.p
+                            variants={fadeInUp}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{ once: true }}
+                            className="section-subtitle text-center"
+                        >
+                            رحلة عبر الزمن مع قامات أرست دعائم الأسرة
+                        </motion.p>
                     </div>
 
-                    <div className="figures-slider-viewport">
-                        <motion.div
-                            className="figures-slider-track"
-                            style={{ x, width: `${figures.length * 100}vw` }}
-                        >
-                            {figures.map((fig, idx) => (
-                                <div key={idx} className="figure-h-card-wrapper" style={{ width: '100vw' }}>
-                                    <div className="container h-100 d-flex-center">
-                                        <div className="figure-details-pane glass-panel">
-                                            <div className="details-header">
-                                                <div className="details-icon">{fig.icon}</div>
-                                                <div className="details-title">
-                                                    <h3>{fig.name}</h3>
-                                                    <span className="born-badge">تاريخ الميلاد: {fig.born}</span>
-                                                </div>
-                                            </div>
+                    <div className="figures-desktop-tabs">
+                        {figures.map((fig, idx) => (
+                            <button
+                                key={idx}
+                                className={`figure-desktop-tab-btn ${activeTab === idx ? 'active' : ''}`}
+                                onClick={() => setActiveTab(idx)}
+                            >
+                                {activeTab === idx && (
+                                    <motion.div
+                                        layoutId="activeTabIndicator"
+                                        className="active-tab-bg"
+                                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                    />
+                                )}
+                                <span className="tab-icon">{fig.icon}</span>
+                                <span className="tab-title">{fig.shortTitle}</span>
+                            </button>
+                        ))}
+                    </div>
 
-                                            <div className={`details-body ${(!fig.highlights && (!fig.testaments || fig.testaments.length === 0)) ? 'single-column' : ''}`}>
-                                                <div className="fig-desc-text">
-                                                    {fig.desc.split('\n\n').map((paragraph, i) => (
-                                                        <p key={i}>{paragraph}</p>
-                                                    ))}
-                                                </div>
-
-                                                {(!fig.highlights && (!fig.testaments || fig.testaments.length === 0)) ? null : (
-                                                    <div className="details-body-secondary">
-                                                        {fig.highlights && (
-                                                            <div className="fig-quote-box">
-                                                                <p>{fig.highlights}</p>
-                                                            </div>
-                                                        )}
-
-                                                        {fig.testaments && fig.testaments.length > 0 && (
-                                                            <div className="fig-testaments">
-                                                                <h4 className="testament-title">{fig.testamentsTitle || "الوصايا والمخطوطات العائدة للشيخ:"}</h4>
-                                                                <div className="testaments-grid">
-                                                                    {fig.testaments.map((img, i) => (
-                                                                        <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
-                                                                            <motion.img
-                                                                                layoutId={`testament-${img}`}
-                                                                                src={img}
-                                                                                alt={`وثيقة ${i + 1}`}
-                                                                                loading="eager"
-                                                                            />
-                                                                            <div className="zoom-overlay"><span>توسيع</span></div>
-                                                                        </div>
-                                                                    ))}
-                                                                </div>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
+                    <div className="figures-desktop-content">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeTab}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.3 }}
+                                className="figure-details-pane glass-panel"
+                            >
+                                <div className="details-header">
+                                    <div className="details-icon">{figures[activeTab].icon}</div>
+                                    <div className="details-title">
+                                        <h3>{figures[activeTab].name}</h3>
+                                        <span className="born-badge">تاريخ الميلاد: {figures[activeTab].born}</span>
                                     </div>
                                 </div>
-                            ))}
-                        </motion.div>
+
+                                <div className={`details-body ${(!figures[activeTab].highlights && (!figures[activeTab].testaments || figures[activeTab].testaments.length === 0)) ? 'single-column' : ''}`}>
+                                    <div className="fig-desc-text">
+                                        {figures[activeTab].desc.split('\n\n').map((paragraph, i) => (
+                                            <p key={i}>{paragraph}</p>
+                                        ))}
+                                    </div>
+
+                                    {(!figures[activeTab].highlights && (!figures[activeTab].testaments || figures[activeTab].testaments.length === 0)) ? null : (
+                                        <div className="details-body-secondary">
+                                            {figures[activeTab].highlights && (
+                                                <div className="fig-quote-box">
+                                                    <p>{figures[activeTab].highlights}</p>
+                                                </div>
+                                            )}
+
+                                            {figures[activeTab].testaments && figures[activeTab].testaments.length > 0 && (
+                                                <div className="fig-testaments">
+                                                    <h4 className="testament-title">{figures[activeTab].testamentsTitle || "الوصايا والمخطوطات العائدة للشيخ:"}</h4>
+                                                    <div className="testaments-grid">
+                                                        {figures[activeTab].testaments.map((img, i) => (
+                                                            <div key={i} className="testament-thumb" onClick={() => setLightboxImg(img)}>
+                                                                <motion.img
+                                                                    layoutId={`testament-${img}`}
+                                                                    src={img}
+                                                                    alt={`وثيقة ${i + 1}`}
+                                                                    loading="eager"
+                                                                />
+                                                                <div className="zoom-overlay"><span>توسيع</span></div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
