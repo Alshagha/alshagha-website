@@ -36,7 +36,7 @@ const Hero = () => {
                     <span className="gold-text">أسرة الشقحاء</span>
                 </motion.h1>
                 <motion.p className="hero-text" variants={fadeInUp}>
-                    من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر،و حاضر مشرق،و مستقبل واعد.
+                    من الأسر النجدية العريقة التي ترجع إلى قبيلة هذيل. تاريخ متجذر، وحاضر مشرق، ومستقبل واعد.
                 </motion.p>
                 <motion.div variants={fadeInUp}>
                     <MagneticButton strength={0.2}>
@@ -44,6 +44,7 @@ const Hero = () => {
                     </MagneticButton>
                 </motion.div>
             </motion.div>
+
 
             <div className="scroll-indicator">
                 <div className="mouse"></div>
