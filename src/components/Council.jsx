@@ -89,28 +89,28 @@ const Council = () => {
                                 <span className="goal-num">١</span>
                                 <div className="goal-text">
                                     <h4>الاستدامة</h4>
-                                    <p>ضمان استمرارية أعمال ومشاريع الأسرة للأجيال القادمة</p>
+                                    <p>ضمان استمرارية أعمال ومشاريع الأسرة للأجيال القادمة.</p>
                                 </div>
                             </div>
                             <div className="goal-item">
                                 <span className="goal-num">٢</span>
                                 <div className="goal-text">
                                     <h4>الحوكمة</h4>
-                                    <p>تطبيق أفضل معايير الإدارة والشفافية والمساءلة</p>
+                                    <p>تطبيق أفضل معايير الإدارة والشفافية والمساءلة.</p>
                                 </div>
                             </div>
                             <div className="goal-item">
                                 <span className="goal-num">٣</span>
                                 <div className="goal-text">
                                     <h4>التواصل</h4>
-                                    <p>تعزيز روابط القربى والتآلف بين أفراد الأسرة</p>
+                                    <p>تعزيز روابط القربى والتآلف بين أفراد الأسرة.</p>
                                 </div>
                             </div>
                             <div className="goal-item">
                                 <span className="goal-num">٤</span>
                                 <div className="goal-text">
                                     <h4>التنمية</h4>
-                                    <p>دعم وتطوير قدرات أبناء الأسرة وتمكينهم</p>
+                                    <p>دعم وتطوير قدرات أبناء الأسرة وتمكينهم.</p>
                                 </div>
                             </div>
                         </motion.div>
