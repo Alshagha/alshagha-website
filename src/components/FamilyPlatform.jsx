@@ -68,7 +68,7 @@ const FamilyPlatform = () => {
                     >
                         <div className="phone-mockup">
                             <div className="phone-screen">
-                                <img src="/images/family_tree.jpg" alt="Family App Preview" className="app-preview" />
+                                <img src="/images/family_tree.jpg" alt="Family App Preview" className="app-preview" loading="lazy" />
                             </div>
                         </div>
                         <div className="floating-elements">

@@ -53,6 +53,7 @@ const Tree = () => {
                             src="/images/family_tree.jpg"
                             alt="شجرة عائلة الشقحاء"
                             className="tree-image"
+                            loading="lazy"
                         />
                     </div>
 
