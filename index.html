@@ -5,13 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>موقع أسرة الشقحاء الرسمي | Alshagha Family</title>
+
+  <!-- HTTPS Redirect Script -->
+  <script>
+    if (window.location.protocol === 'http:' && !window.location.hostname.includes('localhost') && !window.location.hostname.startsWith('127.0.0.')) {
+      window.location.href = window.location.href.replace('http:', 'https:');
+    }
+  </script>
+
+  <!-- Canonical Link for HTTPS indexing -->
+  <link rel="canonical" href="https://alshaqha.com/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- SEO Meta Tags -->
   <meta name="description"
-    content="الموقع الرسمي لأسرة الشقحاء؛ يستعرض تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
+    content="الموقع الرسمي لأسرة الشقحاء ونسبها (الشقحاء وش يرجعون). يستعرض الموقع تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
   <meta name="keywords"
     content="الشقحاء, عائلة الشقحاء, أسرة الشقحاء, الشقحاء عنيزة, منصور الشقحاء, محمد الشقحاء, عقيلات, تاريخ الشقحاء, العائلة, مجلس الأسرة, شجرة العائلة, الشقحاء من هذيل, خامس العفران, هذيل, الشقحاء وش يرجعون, الحتارشة, الشقحاء ال حمود, آل حمود, الشقحاء وش اصلهم, الشقحاء القصيم, أسرة الشقحاء من هذيل, الشقحاء في القصيم, العفراني, الشقحاء الحتارشة" />
   <meta name="author" content="أسرة الشقحاء" />
@@ -22,7 +33,7 @@
   <meta property="og:url" content="https://alshaqha.com/" />
   <meta property="og:title" content="موقع أسرة الشقحاء الرسمي | تاريخ وتراث الأسرة" />
   <meta property="og:description"
-    content="الموقع الرسمي لأسرة الشقحاء؛ يستعرض تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
+    content="الموقع الرسمي لأسرة الشقحاء ونسبها (الشقحاء وش يرجعون). يستعرض الموقع تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
   <meta property="og:image" content="https://alshaqha.com/images/logo.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -33,19 +44,20 @@
   <meta property="twitter:url" content="https://alshaqha.com/" />
   <meta property="twitter:title" content="موقع أسرة الشقحاء الرسمي | تاريخ وتراث الأسرة" />
   <meta property="twitter:description"
-    content="الموقع الرسمي لأسرة الشقحاء؛ يستعرض تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
+    content="الموقع الرسمي لأسرة الشقحاء ونسبها (الشقحاء وش يرجعون). يستعرض الموقع تاريخ الأسرة العريق، وأعلامها البارزين كالشيخ محمد بن منصور الشقحاء والأمير منصور بن صالح الشقحاء، بالإضافة إلى شجرة العائلة ومجلس الأسرة." />
   <meta property="twitter:image" content="https://alshaqha.com/images/logo.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="/images/favicon.png" />
 
-  <!-- Structured Data (JSON-LD) -->
+  <!-- Structured Data (JSON-LD) - Organization -->
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "أسرة الشقحاء",
+        "alternateName": ["الشقحاء", "عائلة الشقحاء", "أسرة الشقحاء", "المنصور الشقحاء", "آل حمود الشقحاء"],
         "url": "https://alshaqha.com/",
         "logo": "https://alshaqha.com/images/logo.png",
         "description": "الموقع الرسمي لأسرة الشقحاء؛ يستعرض تاريخ الأسرة العريق، وأعلامها البارزين، بالإضافة إلى شجرة العائلة ومجلس الأسرة.",
@@ -55,6 +67,32 @@
           "addressRegion": "القصيم",
           "addressCountry": "SA"
         }
+      }
+    </script>
+
+  <!-- Structured Data (JSON-LD) - FAQ -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "الشقحاء وش يرجعون؟ وما هو أصل ونسب عائلة الشقحاء؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تعد أسرة الشقحاء وفرعها أسرة المنصور من الأسر النجدية العريقة، وتعود في نسبها إلى الجد منصور بن محمد بن حمود من خامس العفران من قبيلة الحتارشة من قبيلة هذيل بن إلياس بن مضر بن نزار بن معد بن عدنان، وقد نشأت واستقرت الأسرة تاريخياً في محافظة عنيزة بمنطقة القصيم."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "من هم أسرة الشقحاء؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "أسرة الشقحاء هي أسرة نجدية عريقة من قبيلة هذيل، وموطنها الأصلي مدينة عنيزة بالقصيم. يستعرض موقعها الرسمي تاريخ الأسرة ونسبها وأعلامها وشجرة العائلة ومجلس إدارتها."
+            }
+          }
+        ]
       }
     </script>
 </head>
